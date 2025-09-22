@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap');
+@import "tailwindcss";
+
+
+@font-face {
+  font-family: 'MyFont';
+  src: url('/font/SF-Pro-Text-Light.otf') ;
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MyFont';
+  src: url('/font/SF-Pro-Text-Regular.otf') ;
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'MyFont';
+  src: url('/font/SF-Pro-Text-Medium.otf') ;
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'MyFont';
+  src: url('/font/SF-Pro-Text-Semibold.otf') ;
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'MyFont';
+  src: url('/font/SF-Pro-Text-Bold.otf') ;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.bg1{
+    background-image: url(./assets/bg.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.bg2{
+    background-image: url(./assets/bg2.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.bg3{
+    background-image: url(./assets/bg3.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.bg5{
+    background-image: url(./assets/bg5.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Bullet style */
+.mySwiper .swiper-pagination-bullet {
+  margin: 12px 6px !important;   /* margin-top not needed; use vertical spacing */
+  border-radius: 12px !important;
+  background: #ccc;             /* default bullet color */
+  opacity: 0.5;
+  transition: all 0.3s ease;
+}
+
+/* Active bullet */
+.mySwiper .swiper-pagination-bullet-active {
+  opacity: 1 !important;
+  background: var(--swiper-pagination-color, #84cc16); /* lime-500 fallback */
+  width: 122px !important;
+  border-radius: 12px !important;
+}
