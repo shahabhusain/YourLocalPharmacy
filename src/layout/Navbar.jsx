@@ -2,11 +2,23 @@ import React, { useState, useEffect } from "react";
 import logo from "../assets/logo.png";
 import { IoMdArrowForward } from "react-icons/io";
 import { Link, useLocation } from "react-router-dom";
+import { HiMenu, HiX } from "react-icons/hi";
+import { IoChevronDown, IoChevronUp } from "react-icons/io5";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
-  const [aboutOpen, setAboutOpen] = useState(false);
-  const [teamOpen, setTeamOpen] = useState(null);
+
+  // desktop hover
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const [nhsOpen, setNhsOpen] = useState(false);
+  const [privateOpen, setPrivateOpen] = useState(false);
+
+  // mobile
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileServices, setMobileServices] = useState(false);
+  const [mobileNHS, setMobileNHS] = useState(false);
+  const [mobilePrivate, setMobilePrivate] = useState(false);
+
   const location = useLocation();
 
   useEffect(() => {
@@ -26,166 +38,213 @@ const Navbar = () => {
     { pathName: "/medicine", title: "Medicine AtoZ" },
   ];
 
+  /** ---------------- MOBILE ACCORDION ---------------- */
+  const MobileServicesMenu = () => (
+    <div className="pl-4 mt-2 space-y-2">
+      {/* NHS */}
+      <button
+        onClick={() => setMobileNHS(!mobileNHS)}
+        className="flex justify-between w-full text-left font-medium py-2"
+      >
+        NHS {mobileNHS ? <IoChevronUp /> : <IoChevronDown />}
+      </button>
+      {mobileNHS && (
+        <ul className="pl-4 space-y-2">
+          <li><Link onClick={() => setMobileOpen(false)} to="/new-medicine-service">New Medicine Service</Link></li>
+          <li><Link onClick={() => setMobileOpen(false)} to="/hypertension-case-finding-service">Hypertension Case Finding</Link></li>
+          <li><a href="https://111.nhs.uk/emergency-prescription">Emergency Supply</a></li>
+          <li><Link onClick={() => setMobileOpen(false)} to="/nhs-contraception-service">NHS Contraception</Link></li>
+          <li><Link onClick={() => setMobileOpen(false)} to="/pharmacy-first">Pharmacy First</Link></li>
+        </ul>
+      )}
+
+      {/* PRIVATE */}
+      <button
+        onClick={() => setMobilePrivate(!mobilePrivate)}
+        className="flex justify-between w-full text-left font-medium py-2"
+      >
+        Private {mobilePrivate ? <IoChevronUp /> : <IoChevronDown />}
+      </button>
+      {mobilePrivate && (
+        <ul className="pl-4 space-y-2">
+          <li><Link onClick={() => setMobileOpen(false)} to="/travel-clinic">Travel Clinic</Link></li>
+          <li><Link onClick={() => setMobileOpen(false)} to="/hajj-umrah-vaccination">Hajj & Umrah Vaccination</Link></li>
+          <li><Link onClick={() => setMobileOpen(false)} to="/non-travel-vaccination">Non Travel Vaccination</Link></li>
+          <li><Link onClick={() => setMobileOpen(false)} to="/blood-test">Blood Testing</Link></li>
+          <li><Link onClick={() => setMobileOpen(false)} to="/bcg-scar-checks">BCG Scar Checks</Link></li>
+          <li><Link onClick={() => setMobileOpen(false)} to="/ear-wax-removal-microsuction">Ear Wax Removal</Link></li>
+          <li><Link onClick={() => setMobileOpen(false)} to="/cryotherapy">Cryotherapy</Link></li>
+          <li><Link onClick={() => setMobileOpen(false)} to="/vitamin-b12">Vitamin B12</Link></li>
+          <li><Link onClick={() => setMobileOpen(false)} to="/weight-management">Weight Management</Link></li>
+          <li><Link onClick={() => setMobileOpen(false)} to="/uti-treatment">UTI Treatment</Link></li>
+          <li><Link onClick={() => setMobileOpen(false)} to="/independent-prescriber">Independent Prescriber</Link></li>
+          <li><Link onClick={() => setMobileOpen(false)} to="/ear-piercing">Ear Piercing</Link></li>
+          <li><Link onClick={() => setMobileOpen(false)} to="/altitude-sickness-treatment">Altitude Sickness</Link></li>
+        </ul>
+      )}
+    </div>
+  );
+
+  /** ---------------- DESKTOP MENU ---------------- */
+  const DesktopServicesDropdown = () => (
+    <div
+      onMouseEnter={() => setServicesOpen(true)}
+      onMouseLeave={() => {
+        setServicesOpen(false);
+        setNhsOpen(false);
+        setPrivateOpen(false);
+      }}
+      className="relative"
+    >
+      <span
+        className={`cursor-pointer text-[14px] font-semibold ${
+          location.pathname === "/services" ? "border-b-2 border-[#80E900] pb-1" : ""
+        }`}
+      >
+          <Link to="/services">Services</Link>
+      </span>
+
+      {/* main dropdown */}
+      {servicesOpen && (
+        <div className="absolute bottom-[-92px] left-0 mt-3 w-56 bg-white rounded-md shadow-lg p-2 z-50">
+          {/* NHS */}
+          <div
+            onMouseEnter={() => setNhsOpen(true)}
+            onMouseLeave={() => setNhsOpen(false)}
+            className="relative"
+          >
+            <button className="flex justify-between w-full px-3 py-2 hover:bg-gray-100 font-medium">
+              NHS <IoChevronDown />
+            </button>
+            {nhsOpen && (
+              <ul className="absolute left-full top-0 w-56 flex flex-col gap-y-3 bg-white rounded-md shadow-lg p-2">
+                <li><Link to="/new-medicine-service">New Medicine Service</Link></li>
+                <li><Link to="/hypertension-case-finding-service">Hypertension Case Finding</Link></li>
+                <li><a href="https://111.nhs.uk/emergency-prescription">Emergency Supply</a></li>
+                <li><Link to="/nhs-contraception-service">NHS Contraception</Link></li>
+                <li><Link to="/pharmacy-first">Pharmacy First</Link></li>
+              </ul>
+            )}
+          </div>
+
+          {/* PRIVATE */}
+          <div
+            onMouseEnter={() => setPrivateOpen(true)}
+            onMouseLeave={() => setPrivateOpen(false)}
+            className="relative"
+          >
+            <button className="flex justify-between w-full px-3 py-2 hover:bg-gray-100 font-medium">
+              Private <IoChevronDown />
+            </button>
+            {privateOpen && (
+              <ul className="absolute left-full top-0 w-64 flex flex-col gap-y-3 bg-white rounded-md shadow-lg p-2">
+                <li><Link to="/travel-clinic">Travel Clinic</Link></li>
+                <li><Link to="/hajj-umrah-vaccination">Hajj & Umrah Vaccination</Link></li>
+                <li><Link to="/non-travel-vaccination">Non Travel Vaccination</Link></li>
+                <li><Link to="/blood-test">Blood Testing</Link></li>
+                <li><Link to="/bcg-scar-checks">BCG Scar Checks</Link></li>
+                <li><Link to="/ear-wax-removal-microsuction">Ear Wax Removal</Link></li>
+                <li><Link to="/cryotherapy">Cryotherapy</Link></li>
+                <li><Link to="/vitamin-b12">Vitamin B12</Link></li>
+                <li><Link to="/weight-management">Weight Management</Link></li>
+                <li><Link to="/uti-treatment">UTI Treatment</Link></li>
+                <li><Link to="/independent-prescriber">Independent Prescriber</Link></li>
+                <li><Link to="/ear-piercing">Ear Piercing</Link></li>
+                <li><Link to="/altitude-sickness-treatment">Altitude Sickness</Link></li>
+              </ul>
+            )}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+
+  /** ---------------- NAV LIST ---------------- */
+  const NavList = (isMobile = false) => (
+    <ul className={`${isMobile ? "flex flex-col gap-4" : "flex flex-row items-center gap-6"}`}>
+      {NavLinks.map((item, i) =>
+        item.title === "Services" ? (
+          <li key={i}>
+            {isMobile ? (
+              <>
+                <button
+                  onClick={() => setMobileServices(!mobileServices)}
+                  className="flex justify-between w-full text-left font-semibold"
+                >
+                  Services {mobileServices ? <IoChevronUp /> : <IoChevronDown />}
+                </button>
+                {mobileServices && <MobileServicesMenu />}
+              </>
+            ) : (
+              <DesktopServicesDropdown />
+            )}
+          </li>
+        ) : (
+          <li key={i}>
+            <Link
+              to={item.pathName}
+              onClick={() => isMobile && setMobileOpen(false)}
+              className={`text-[14px] font-semibold ${
+                location.pathname === item.pathName
+                  ? "border-b-2 border-[#80E900] pb-1"
+                  : ""
+              }`}
+            >
+              {item.title}
+            </Link>
+          </li>
+        )
+      )}
+    </ul>
+  );
+
   return (
     <div
-      className={`flex items-center bg-white z-[1000] py-3 px-5 text-black justify-between transform transition-all duration-300 ease-in ${
-        scrolled
-          ? "w-full sticky top-0"
-          : "w-[90%] sticky top-6 rounded-full mx-auto mt-6"
+      className={`flex items-center bg-white z-[1000] py-3 px-5 text-black justify-between transition-all duration-300 ${
+        scrolled ? "w-full sticky top-0" : "w-[90%] sticky top-6 rounded-full mx-auto mt-6"
       }`}
     >
-      <img className="w-[103px]" src={logo} alt="Logo" />
+      <Link to="/">
+        <img className="w-[103px]" src={logo} alt="Logo" />
+      </Link>
 
-      <ul className="flex items-center gap-6 relative">
-        {NavLinks.map((item, index) =>
-          item.title === "Services" ? (
-            <li
-              key={index}
-              className="relative group"
-              onMouseEnter={() => setAboutOpen(true)}
-              onMouseLeave={() => {
-                setAboutOpen(false);
-                setTeamOpen(index);
-              }}
-            >
-              <Link
-                to={item.pathName}
-                className={`text-[14px] font-semibold ${
-                  location.pathname === item.pathName
-                    ? "border-b-[3px] border-b-[#80E900] pb-2"
-                    : ""
-                }`}
-              >
-                {item.title}
-              </Link>
+      {/* Desktop */}
+      <div className="hidden md:flex items-center gap-6">
+        {NavList()}
+        <Link
+          to="/appointment"
+          className="flex items-center text-white group"
+        >
+          <span className="bg-[#80E900] rounded-full py-3 px-6 transition-all duration-300 group-hover:scale-105 group-hover:shadow-lg">
+            Booking Appointment
+          </span>
+          <span className="h-[45px] w-[45px] rotate-[320deg] flex items-center justify-center bg-[#80E900] rounded-full transition-transform duration-300 group-hover:translate-x-1 group-hover:rotate-[360deg]">
+            <IoMdArrowForward size={20} />
+          </span>
+        </Link>
+      </div>
 
-              {/* 1st level dropdown */}
-              <ul
-                className={`absolute top-[12px] left-0 mt-3 w-48 bg-white shadow-lg rounded-md transition-all duration-300 transform ${
-                  aboutOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-3 pointer-events-none"
-                }`}
-              >
-               <li
-                  className="px-4 py-2 hover:bg-gray-100 relative"
-                  onMouseEnter={() => setTeamOpen(0)}
-                  onMouseLeave={() => setTeamOpen(1)}
-                >
-                  NHS ▸
-                  {/* 2nd level dropdown */}
-                  <ul
-                    className={`absolute top-[12px] left-[132px] ml-1 w-[350px] bg-white shadow-lg rounded-md transition-all duration-300 transform ${
-                      teamOpen  === 0
-                        ? "opacity-100 translate-y-0"
-                        : "opacity-0 -translate-y-3 pointer-events-none"
-                    }`}
-                  >
-                    <li className="px-6 py-3 hover:bg-gray-100">
-                      <Link to="/about-us/team/designers">New Medicine Service</Link>
-                    </li>
-                    <li className="px-4 py-2 hover:bg-gray-100">
-                      <Link to="/about-us/team/developers">Hypertension Case Finding Service</Link>
-                    </li>
-                                        <li className="px-4 py-2 uppercase hover:bg-gray-100">
-                      <Link to="/about-us/team/developers">Emergency Supply of Prescription medication</Link>
-                    </li>
+      {/* Mobile Hamburger */}
+      <button
+        className="md:hidden text-black"
+        onClick={() => setMobileOpen(!mobileOpen)}
+      >
+        {mobileOpen ? <HiX size={28} /> : <HiMenu size={28} />}
+      </button>
 
-                              <li className="px-4 py-2 uppercase hover:bg-gray-100">
-                      <Link to="/about-us/team/developers">NHS Contraception Service</Link>
-                    </li>
-
-                        <li className="px-4 py-2 uppercase hover:bg-gray-100">
-                      <Link to="/about-us/team/developers">Pharmacy First</Link>
-                    </li>
-                  </ul>
-                </li>
-                <li
-                  className="px-4 py-2 hover:bg-gray-100 relative"
-                  onMouseEnter={() => setTeamOpen(1)}
-                  onMouseLeave={() => setTeamOpen(0)}
-                >
-                  PRIVATE ▸
-                  {/* 2nd level dropdown */}
-                  <ul
-                    className={`absolute top-[12px] left-[132px] ml-1 w-[350px]  bg-white shadow-lg rounded-md transition-all duration-300 transform ${
-                      teamOpen === 1
-                        ? "opacity-100 translate-y-0"
-                        : "opacity-0 -translate-y-3 pointer-events-none"
-                    }`}
-                  >
-                    <li className="px-4 py-2 hover:bg-gray-100">
-                      <Link to="/about-us/team/designers">Travel Clinic</Link>
-                    </li>
-                    <li className="px-4 py-2 hover:bg-gray-100">
-                      <Link to="/about-us/team/developers">Hajj & Umrah Vaccination</Link>
-                    </li>
-
-                        <li className="px-4 py-2 hover:bg-gray-100">
-                      <Link to="/about-us/team/developers">Non Travel Vaccination</Link>
-                    </li>
-
-                        <li className="px-4 py-2 hover:bg-gray-100">
-                      <Link to="/about-us/team/developers">Blood Testing</Link>
-                    </li>
-
-                        <li className="px-4 py-2 hover:bg-gray-100">
-                      <Link to="/about-us/team/developers">BCG Scar Checks</Link>
-                    </li>
-
-                        <li className="px-4 py-2 hover:bg-gray-100">
-                      <Link to="/about-us/team/developers">Ear Wax Removal</Link>
-                    </li>
-
-                        <li className="px-4 py-2 hover:bg-gray-100">
-                      <Link to="/about-us/team/developers">Cryotherapy</Link>
-                    </li>
-
-                        <li className="px-4 py-2 hover:bg-gray-100">
-                      <Link to="/about-us/team/developers">Vitamin B12</Link>
-                    </li>
-
-                        <li className="px-4 py-2 hover:bg-gray-100">
-                      <Link to="/about-us/team/developers">Weight Management</Link>
-                    </li>
-
-                        <li className="px-4 py-2 hover:bg-gray-100">
-                      <Link to="/about-us/team/developers">UTI Treatment</Link>
-                    </li>
-
-                        <li className="px-4 py-2 hover:bg-gray-100">
-                      <Link to="/about-us/team/developers">Independent Prescriber</Link>
-                    </li>
-
-                        <li className="px-4 py-2 hover:bg-gray-100">
-                      <Link to="/about-us/team/developers">Ear Piercing</Link>
-                    </li>
-
-                        <li className="px-4 py-2 hover:bg-gray-100">
-                      <Link to="/about-us/team/developers">Altitude Sickness Treatment</Link>
-                    </li>
-
-
-                  </ul>
-                </li>
-              </ul>
-            </li>
-          ) : (
-            <li key={index}>
-              <Link
-                className={`text-[14px] font-semibold ${
-                  location.pathname === item.pathName
-                    ? "border-b-[3px] border-b-[#80E900] pb-2"
-                    : ""
-                }`}
-                to={item.pathName}
-              >
-                {item.title}
-              </Link>
-            </li>
-          )
-        )}
-      </ul>
-
-      <Link to="/appointment" className=' flex  text-[#fff] items-center '> <span className='bg-[#80E900] rounded-full py-3 px-6 '>Booking Appointment</span> <span className='h-[45px] w-[45px] rotate-320 flex items-center justify-center bg-[#80E900] rounded-full'><IoMdArrowForward size={20} /></span></Link>
+      {/* Mobile Drawer */}
+      {mobileOpen && (
+        <div className="absolute top-full left-0 w-full bg-white h-[450px] overflow-y-scroll shadow-md md:hidden p-6 z-[999]">
+          {NavList(true)}
+          <Link
+            to="/appointment"
+            onClick={() => setMobileOpen(false)}
+            className="mt-6 block text-center text-white bg-[#80E900] rounded-full py-3 px-6"
+          >
+            Booking Appointment
+          </Link>
+        </div>
+      )}
     </div>
   );
 };

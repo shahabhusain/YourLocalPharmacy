@@ -1,35 +1,11 @@
 import React from 'react'
-import icon1 from '../../assets/icon1.png'
-import icon2 from '../../assets/icon3.png'
-import icon3 from '../../assets/icon8.png'
-import icon4 from '../../assets/icon6.png'
-const ServiceWork = () => {
-    const data = [
-        {
-            icon:icon1,
-            title:"Start your medication",
-            desc:"Our proprietary tech taps into a 260M+ customer database and 2,000+ variables to build smarter predictive models—bringing you only high-value customers."
-        },
-        {
-            icon:icon2,
-            title:"Your second appointment",
-            desc:"Our proprietary tech taps into a 260M+ customer database and 2,000+ variables to build smarter predictive models—bringing you only high-value customers."
-        },
-        {
-            icon:icon3,
-            title:"Your third appointment",
-            desc:"Our proprietary tech taps into a 260M+ customer database and 2,000+ variables to build smarter predictive models—bringing you only high-value customers."
-        },
-        {
-            icon:icon4,
-            title:"How long will each appointment take?",
-            desc:"Our proprietary tech taps into a 260M+ customer database and 2,000+ variables to build smarter predictive models—bringing you only high-value customers."
-        },
-    ]
+
+const ServiceWork = ({data}) => {
+
   return (
-    <div className=' bg-[#0c0c0c] p-20 flex flex-col items-center rounded-b-[3rem]  gap-y-6'>
+    <div className=' bg-[#0c0c0c] mb-20 md:p-20 p-4 flex flex-col items-center rounded-b-[3rem]  gap-y-6'>
         <h1 className=' text-[24px] font-bold text-white text-center'>How this service works?</h1>
-         <div className=' grid grid-cols-2 gap-5 mt-6'>
+         <div className=' grid md:grid-cols-2 grid-cols-1 gap-5 mt-6'>
            {
             data.map((item, index)=>(
                 <div key={index} className=' bg-[#ffffff08] p-5 rounded-2xl'>

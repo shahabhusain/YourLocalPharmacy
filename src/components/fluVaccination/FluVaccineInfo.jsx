@@ -2,7 +2,7 @@ import React from "react";
 
 export default function FluVaccineInfo() {
   return (
-    <section className="bg-[#F8F8F8] px-20 py-10 rounded-[3rem] mb-20">
+    <section className="bg-[#F8F8F8] md:px-20 px-4 py-10 rounded-[3rem] mb-20">
       <h2 className="text-2xl md:text-3xl font-bold mb-6">
         Who Can Have The Flu Vaccine?
       </h2>

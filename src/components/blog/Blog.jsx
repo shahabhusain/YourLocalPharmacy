@@ -30,8 +30,8 @@ const Blog = () => {
 
     ]
   return (
-    <div className=' mt-[400px] mb-[100px] flex  justify-between w-[90%] mx-auto'>
-        <div className=' flex flex-col gap-y-5 w-[65%]'>
+    <div className=' md:mt-[400px] mt-[350px] mb-[100px] flex flex-col md:flex-row  justify-between w-[90%] mx-auto'>
+        <div className=' flex flex-col gap-y-5 md:w-[65%]'>
             <img src={right} alt="" />
             <h1 className=' text-[24px] font-bold text-black'>Did you just SHOOT yourself?</h1>
             <div  className=' text-[14px] font-[400] text-[#4E4E4E] flex items-center gap-5'><span>by admin</span> <span>Nov 29, 2024</span> <span>Uncategorized</span></div>
@@ -41,7 +41,7 @@ Cryotherapy has emerged as a popular treatment option in recent years, garnering
 </p>
         </div>
 
-         <div className='border-[#0000000e] border-[1px] flex flex-col gap-y-5 rounded-md py-3 px-5 w-[30%]'>
+         <div className='border-[#0000000e] border-[1px] flex flex-col gap-y-5 rounded-md py-3 px-5 md:w-[30%] mt-5 md:mt-0'>
                     <div className='flex outline focus-within:outline-[#80E900] border-none py-3 px-5 rounded-md bg-[#F8F8F888] items-center justify-between '>
          <input className=' focus:outline-none border-none' type="text" placeholder='search' />
          <FaSearch size={20} className=' text-[#80E900]' />

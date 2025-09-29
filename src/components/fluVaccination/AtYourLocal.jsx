@@ -24,7 +24,7 @@ const AtYourLocal = () => {
         },
     ]
   return (
-    <div className=' w-[90%] mx-auto mt-[400px] mb-[100px] flex flex-col gap-y-12'>
+    <div className=' w-[90%] mx-auto md:mt-[400px] mt-[300px] mb-[100px] flex flex-col gap-y-12'>
               <div className="flex flex-col md:flex-row items-start justify-between gap-6">
             <div className="text-start text-black text-[46px] font-semibold flex flex-col">
               <span className="text-[16px] font-medium">At Your Local Eddington Pharmacy</span>
@@ -47,8 +47,8 @@ const AtYourLocal = () => {
                {
                 data.map((item, index)=>(
                     <div key={index} className='border-[#00000025] flex items-center justify-between border-[1px] py-3 px-5 rounded-md'>
-                 <h2 className=' text-[14px] font-[400] text-[#4E4E4E]'>{item.title}</h2>
-                 <button className=' text-[16px] font-[500] bg-[#F8F8F8] py-3 px-5 rounded-md flex items-center gap-2'> <span className='border-[#00000092] border-[1px] p-1 flex items-center justify-center rounded-full'><span className=' h-2 w-2 rounded-full bg-[#80E900] '></span></span> {item.button}</button>
+                 <h2 className=' md:text-[14px] text-[10px] font-[400] text-[#4E4E4E]'>{item.title}</h2>
+                 <button className=' md:text-[16px] text-[12px] font-[500] bg-[#F8F8F8] py-3 px-5 rounded-md flex items-center gap-2'> <span className='border-[#00000092] border-[1px] p-1 flex items-center justify-center rounded-full'><span className=' h-2 w-2 rounded-full bg-[#80E900] '></span></span> {item.button}</button>
               </div>
                 ))
                }

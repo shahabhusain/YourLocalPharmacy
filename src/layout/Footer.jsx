@@ -34,9 +34,9 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-[#0C0F16] px-6 pt-16 w-full rounded-t-[3rem]   text-white">
+    <footer className="bg-[#0C0F16] :px-6 pt-16 w-full rounded-t-[3rem]   text-white">
       <div className="w-[90%] mx-auto rounded-2xl  border-[6px] border-[#ffffff2c]">
-        <div className="grid grid-cols-1 p-12  md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-1">
+        <div className="grid grid-cols-1 md:p-12 p-4  md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-1">
           
           {/* Contact Us Section */}
           <div className="space-y-6">

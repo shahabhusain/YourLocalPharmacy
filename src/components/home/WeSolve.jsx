@@ -8,19 +8,20 @@ import icon6 from '../../assets/icon6.png'
 import icon7 from '../../assets/icon7.png'
 import icon8 from '../../assets/icon8.png'
 import { IoMdArrowForward } from 'react-icons/io'
+import { Link } from 'react-router-dom'
 
 const WeSolve = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null)
 
   const data = [
-    { icon: icon1, title: 'Weight Management', desc: 'Our proprietary tech taps into a 260M+ customer database and 2,000+ variables to build smarter predictive models—bringing you only high-value customers.' },
-    { icon: icon2, title: 'Travel Clinic',      desc: 'Our proprietary tech taps into a 260M+ customer database and 2,000+ variables to build smarter predictive models—bringing you only high-value customers.' },
-    { icon: icon3, title: 'Pharmacy First',     desc: 'Our proprietary tech taps into a 260M+ customer database and 2,000+ variables to build smarter predictive models—bringing you only high-value customers.' },
-    { icon: icon4, title: 'Vitamin B12',        desc: 'Our proprietary tech taps into a 260M+ customer database and 2,000+ variables to build smarter predictive models—bringing you only high-value customers.' },
-    { icon: icon5, title: 'Ear Wax Removal',    desc: 'Our proprietary tech taps into a 260M+ customer database and 2,000+ variables to build smarter predictive models—bringing you only high-value customers.' },
-    { icon: icon6, title: 'Blood Testing',      desc: 'Our proprietary tech taps into a 260M+ customer database and 2,000+ variables to build smarter predictive models—bringing you only high-value customers.' },
-    { icon: icon7, title: 'Cryotherapy',        desc: 'Our proprietary tech taps into a 260M+ customer database and 2,000+ variables to build smarter predictive models—bringing you only high-value customers.' },
-    { icon: icon8, title: 'Independent Prescriber', desc: 'Our proprietary tech taps into a 260M+ customer database and 2,000+ variables to build smarter predictive models—bringing you only high-value customers.' },
+    { icon: icon1, path:"/weight-management", title: 'Weight Management', desc: 'Our proprietary tech taps into a 260M+ customer database and 2,000+ variables to build smarter predictive models—bringing you only high-value customers.' },
+    { icon: icon2, path:"/travel-clinic", title: 'Travel Clinic',      desc: 'Our proprietary tech taps into a 260M+ customer database and 2,000+ variables to build smarter predictive models—bringing you only high-value customers.' },
+    { icon: icon3, path:"/pharmacy-first", title: 'Pharmacy First',     desc: 'Our proprietary tech taps into a 260M+ customer database and 2,000+ variables to build smarter predictive models—bringing you only high-value customers.' },
+    { icon: icon4, path:"/vitamin-b12", title: 'Vitamin B12',        desc: 'Our proprietary tech taps into a 260M+ customer database and 2,000+ variables to build smarter predictive models—bringing you only high-value customers.' },
+    { icon: icon5, path:"/ear-wax-removal-microsuction", title: 'Ear Wax Removal',    desc: 'Our proprietary tech taps into a 260M+ customer database and 2,000+ variables to build smarter predictive models—bringing you only high-value customers.' },
+    { icon: icon6, path:"blood-test", title: 'Blood Testing',      desc: 'Our proprietary tech taps into a 260M+ customer database and 2,000+ variables to build smarter predictive models—bringing you only high-value customers.' },
+    { icon: icon7, path:"/cryotherapy", title: 'Cryotherapy',        desc: 'Our proprietary tech taps into a 260M+ customer database and 2,000+ variables to build smarter predictive models—bringing you only high-value customers.' },
+    { icon: icon8, path:"/independent-prescriber", title: 'Independent Prescriber', desc: 'Our proprietary tech taps into a 260M+ customer database and 2,000+ variables to build smarter predictive models—bringing you only high-value customers.' },
   ]
 
   return (
@@ -35,7 +36,7 @@ const WeSolve = () => {
             </div>
             <div className="text-[16px] font-light text-[#ffffffb5] max-w-md">
               Whether you need leads, sales, or brand growth, JPSDevelops delivers proven digital marketing solutions backed by 100+ years of experience.
-              <span className="block border-b-2 border-[#80E900] text-white text-[12px] font-bold mt-2 cursor-pointer">
+              <span className="block border-b-2 w-fit border-[#80E900] text-white text-[12px] font-bold mt-2 cursor-pointer">
                 More about us
               </span>
             </div>
@@ -63,7 +64,7 @@ const WeSolve = () => {
                 {/* Smooth button fade/slide */}
        
 
-                     <button className={` flex transform transition-all duration-300 ease-in-out  ${hoveredIndex === index ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12 pointer-events-none'}  text-[#fff] items-center `}> <span className='bg-[#80E900] rounded-full py-3 px-6 '>Booking Appointment</span> <span className='h-[45px] w-[45px] rotate-320 flex items-center justify-center bg-[#80E900] rounded-full'><IoMdArrowForward size={20} /></span></button>
+                     <Link to={item.path} className={` flex transform transition-all duration-300 ease-in-out  ${hoveredIndex === index ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12 pointer-events-none'}  text-[#fff] items-center `}> <span className='bg-[#80E900] rounded-full py-3 px-6 '>Booking Appointment</span> <span className='h-[45px] w-[45px] rotate-320 flex items-center justify-center bg-[#80E900] rounded-full'><IoMdArrowForward size={20} /></span></Link>
               </div>
             ))}
           </div>

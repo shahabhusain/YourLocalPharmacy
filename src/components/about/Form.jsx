@@ -3,9 +3,9 @@ import about from '../../assets/about.png'
 import { IoMdArrowForward } from 'react-icons/io'
 const Form = () => {
   return (
-    <div className=' flex items-center justify-between w-[90%] mx-auto mt-20'>
-        <img className=' w-[45%]' src={about} alt="" />
-        <form className=' w-1/2 flex flex-col gap-y-4'>
+    <div className=' flex items-center flex-col md:flex-row justify-between w-[90%] mx-auto mt-20'>
+        <img className=' md:w-[45%]' src={about} alt="" />
+        <form className=' md:w-1/2 flex flex-col gap-y-4'>
            <h1 className=' text-[56px] font-bold text-black'>NOMINATE US</h1>
             <div className=' flex items-center gap-6'>
                  <input className=' text-[#4E4E4E] w-full py-3 px-5 rounded-md text-[14px] font-[400] bg-transparent focus:outline-[#80E900] border-[1px] border-[#00000024]' type="text" placeholder='Patient Name' />

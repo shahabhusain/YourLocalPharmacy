@@ -3,20 +3,21 @@ import { CheckCircle, ArrowRight, Star, Users, MapPin } from 'lucide-react';
 import offer from '../../assets/offer.png'
 import right from '../../assets/right.png'
 import { IoMdArrowForward } from 'react-icons/io';
+import { Link } from 'react-router-dom';
 export default function WeAreOffering() {
   return (
     <div className="min-h-screen bg-[#171717] py-32 rounded-b-[3rem]">
       <div className="w-[90%] mx-auto">
-        <div className=" flex  gap-12">
+        <div className=" flex flex-col md:flex-row  gap-12">
           {/* Left Column - Image Section */}
                
-                 <img className='w-[505px] h-[750px]' src={offer} alt="" />
+                 <img className='md:w-[505px] md:h-[750px]' src={offer} alt="" />
            
 
           {/* Right Column - Content */}
           <div className="space-y-4">
             <div className="space-y-6">
-              <h1 className=" text-[46px] text-white leading-[4rem] font-bold">
+              <h1 className=" lg:text-[46px] md:text-[40px] text-[30px] text-white md:leading-[4rem] font-bold">
                   We Are Offering Innovative And Modern Ways To Deliver High Quality Healthcare To The Community.
               </h1>
               
@@ -57,7 +58,22 @@ export default function WeAreOffering() {
                 Gravelly Hill, Washwood Heath, Sutton Coldfield, Aston and the surrounding areas.
               </p>
             </div>
-                   <button className=' flex  text-[#fff] items-center '> <span className='bg-[#80E900] rounded-full py-3 px-6 '>Booking Appointment</span> <span className='h-[45px] w-[45px] rotate-320 flex items-center justify-center bg-[#80E900] rounded-full'><IoMdArrowForward size={20} /></span></button>
+                       <Link
+  to="/appointment"
+  className="flex items-center  text-white group"
+>
+  <span className="bg-[#80E900] rounded-full py-3 px-6
+                   transition-all duration-300 
+                   group-hover:scale-105 group-hover:shadow-lg">
+    Booking Appointment
+  </span>
+  <span className="h-[45px] w-[45px] rotate-[320deg] flex items-center justify-center 
+                   bg-[#80E900] rounded-full 
+                   transition-transform duration-300 
+                   group-hover:translate-x-1 group-hover:rotate-[360deg]">
+    <IoMdArrowForward size={20} />
+  </span>
+</Link>
           </div>
         </div>
 
