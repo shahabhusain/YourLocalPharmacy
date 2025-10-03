@@ -15,31 +15,38 @@ import icons3 from '../../assets/icon8.png'
 import icons4 from '../../assets/icon6.png'
 import right from '../../assets/rights.png'
 import Main from '../../components/NewMedicineService/Main'
+import { ScrollRestoration } from 'react-router-dom'
 const NewMedicineService = () => {
       const data = [
           {
               icon:icon1,
-              title:"Vitamin B12"
+              title:"Vitamin B12",
+              path:"/vitamin-b12"
           },
           {
               icon:icon2,
-              title:"Flu Vaccination Service"
+              title:"Flu Vaccination Service",
+              path:"/flu-Vaccination-service"
           },
           {
               icon:icon3,
-              title:"UTI Treatment"
+              title:"UTI Treatment",
+               path:"/uti-treatment"
           },
           {
               icon:icon4,
-              title:"Cryotherapy"
+              title:"Cryotherapy",
+               path:"/cryotherapy"
           },
           {
               icon:icon5,
-              title:"Weight Management"
+              title:"Weight Management",
+               path:"/weight-management"
           },
           {
               icon:icon6,
-              title:"Blood Testing"
+              title:"Blood Testing",
+               path:"/blood-test"
           },
       ]
           const data1 = [
@@ -82,8 +89,9 @@ const NewMedicineService = () => {
         ]
   return (
     <div className=' mt-20'>
+        <ScrollRestoration />
         <Title title="New Medicine Service" />
-        <OtherServices data={data}  title="New Medicine Service"  desc1="Here at Your Local Erdington Pharmacy, it is our top priority to ensure that our patients are taking their medication correctly and effectively. That is why we provide the new medicine service in Birmingham." desc2="The service is for people who have received their first prescription for a medicine to treat any of the following conditions, Asthma, Lung conditions such as chronic bronchitis and emphysema, Type 2 diabetes, High blood pressure, or any conditions where you take a medicine to control the way your blood clots." desc3="The New Medicine Service provides early support to patients to identify any problems they may be having with their medicines and identify solutions to these problems. As part of the service, any further information you may need is also provided. This should enable you to maximite the benefits of the medication they have been prescribed. This consultation is based on three discussions with the pharmacist based on different times after starting the new medication prescribed to you." />
+        <OtherServices data={data}  title="New Medicine Service"  desc1="Here at Your Manor Pharmacy, it is our top priority to ensure that our patients are taking their medication correctly and effectively. That is why we provide the new medicine service in Birmingham." desc2="The service is for people who have received their first prescription for a medicine to treat any of the following conditions, Asthma, Lung conditions such as chronic bronchitis and emphysema, Type 2 diabetes, High blood pressure, or any conditions where you take a medicine to control the way your blood clots." desc3="The New Medicine Service provides early support to patients to identify any problems they may be having with their medicines and identify solutions to these problems. As part of the service, any further information you may need is also provided. This should enable you to maximite the benefits of the medication they have been prescribed. This consultation is based on three discussions with the pharmacist based on different times after starting the new medication prescribed to you." />
         <ServiceWork data={data1}  />
         <Main />
         <Cards data={data2} image={right} />

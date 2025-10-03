@@ -2,7 +2,7 @@ import React from 'react'
 
 import icon7 from '../../assets/icons7.png'
 import { FaArrowRight } from 'react-icons/fa'
-import { useLocation } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import icon from '../../assets/right.png'
 const OtherServices = ({data, title, desc1, desc2, desc3}) => {
 
@@ -43,7 +43,7 @@ const location = useLocation().pathname
          <h1 className=' text-[24px] font-bold text-white'>Others Services</h1>
            {
             data.map((item, index)=>(
-                 <button key={index} className=' flex items-center rounded-md text-white justify-between bg-[#ffffff13] py-3 px-5'><span className=' flex items-center gap-4'><img src={item.icon} alt="" /> {item.title}</span> <span><FaArrowRight /></span></button>
+                 <Link to={item.path} key={index} className=' flex items-center rounded-md text-white justify-between bg-[#ffffff13] py-3 px-5'><span className=' flex items-center gap-4'><img src={item.icon} alt="" /> {item.title}</span> <span><FaArrowRight /></span></Link>
             ))
            }
         </div>

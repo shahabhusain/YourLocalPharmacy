@@ -16,31 +16,38 @@ import icons4 from '../../assets/icon6.png'
 import travel from '../../assets/tranvel.png'
 import right from '../../assets/blood.jpg'
 import Main from '../../components/BloodTesting/Main'
+import { ScrollRestoration } from 'react-router-dom'
 const BloodTesting = () => {
-      const data = [
+   const data = [
           {
               icon:icon1,
-              title:"Vitamin B12"
+              title:"Vitamin B12",
+              path:"/vitamin-b12"
           },
           {
               icon:icon2,
-              title:"Flu Vaccination Service"
+              title:"Flu Vaccination Service",
+              path:"/flu-Vaccination-service"
           },
           {
               icon:icon3,
-              title:"UTI Treatment"
+              title:"UTI Treatment",
+               path:"/uti-treatment"
           },
           {
               icon:icon4,
-              title:"Cryotherapy"
+              title:"Cryotherapy",
+               path:"/cryotherapy"
           },
           {
               icon:icon5,
-              title:"Weight Management"
+              title:"Weight Management",
+               path:"/weight-management"
           },
           {
               icon:icon6,
-              title:"Blood Testing"
+              title:"Blood Testing",
+               path:"/blood-test"
           },
       ]
           const data1 = [
@@ -54,17 +61,16 @@ const BloodTesting = () => {
             desc:"Only a small amount of blood is taken during the test so you shouldn’t feel any significant after-effects. However, some people feel dizzy and faint during and after the test. If this has happened to you in the past, tell the person carrying out the test so they’re aware and can help you feel more comfortable. After the test, you may have a small bruise where the needle went in. Bruises can be painful, but are usually harmless and fade over the next few days."         },
     ]
 
-            const data2 = [
+        const data2 = [
             {
                 desc:"For more contact us:"
             },
                 {
-                desc:"238 Wheelwright Road, Erdington, Birmingham, B24 8EH 0121 377 8811"
+                desc:`Unit 9 Manor Road Industrial Estate`
             },
                     {
-                desc:"info@yourlocal-pharmacy.co.uk"
+                desc:"Unit 9 Manor Road Industrial Estate"
             },
-                
         ]
 
 const vaccines = [
@@ -90,6 +96,7 @@ const vaccines = [
 
   return (
     <div>
+      <ScrollRestoration />
         <Title title="Blood Testing" />
         <OtherServices data={data}  title="Blood Testing"  desc1="Blood tests have a wide range of uses and are one of the most common types of medical test.Most blood tests only take a few minutes to complete and are carried out at Your Local Erdington Pharmacy.
 We give you service like Hep B, Varicella, MMR and other at Your Local Erdington Pharmacy.

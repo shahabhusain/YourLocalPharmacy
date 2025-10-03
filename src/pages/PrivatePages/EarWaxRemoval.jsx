@@ -11,31 +11,38 @@ import icon6 from '../../assets/icons6.png'
 import icons1 from '../../assets/icon1.png'
 import icons2 from '../../assets/icon3.png'
 import Main from '../../components/Ear/Main'
+import { ScrollRestoration } from 'react-router-dom'
 const EarWaxRemoval = () => {
-      const data = [
+   const data = [
           {
               icon:icon1,
-              title:"Vitamin B12"
+              title:"Vitamin B12",
+              path:"/vitamin-b12"
           },
           {
               icon:icon2,
-              title:"Flu Vaccination Service"
+              title:"Flu Vaccination Service",
+              path:"/flu-Vaccination-service"
           },
           {
               icon:icon3,
-              title:"UTI Treatment"
+              title:"UTI Treatment",
+               path:"/uti-treatment"
           },
           {
               icon:icon4,
-              title:"Cryotherapy"
+              title:"Cryotherapy",
+               path:"/cryotherapy"
           },
           {
               icon:icon5,
-              title:"Weight Management"
+              title:"Weight Management",
+               path:"/weight-management"
           },
           {
               icon:icon6,
-              title:"Blood Testing"
+              title:"Blood Testing",
+               path:"/blood-test"
           },
       ]
           const data1 = [
@@ -91,6 +98,7 @@ const EarWaxRemoval = () => {
 
   return (
     <div>
+      <ScrollRestoration />
         <Title title="Ear Wax Removal" />
         <OtherServices data={data}  title="Ear Wax Removal"  desc1="Are you struggling with clogged ears, muffled hearing, or even dizziness due to excessive earwax buildup? You’re not alone. Earwax buildup is a common problem, especially for older adults and those who wear hearing aids. But don’t worry, there’s a safe and effective solution right in your neighborhood: earwax removal microsuction at Your Local Erdington Pharmacy in Erdington, Birmingham!" />
         <ServiceWork data={data1}  /> 

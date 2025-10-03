@@ -4,14 +4,57 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { Pagination } from 'swiper/modules';
 
-export default function WeSolveDigital() {
+export default function PharmacyTestimonials() {
   const swiperRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [totalPages, setTotalPages] = useState(0);
 
-const testimonials = [ { id: 1, name: "Masirul Jones", role: "Team Leader", image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face&auto=format", rating: 5, quote: "There are many variations of passages of Lorem Ipsum available, but the majority have a suffered alteration in some form, by injected humour.", number: "01" }, { id: 2, name: "Masirul Jones", role: "Team Leader", image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face&auto=format", rating: 5, quote: "There are many variations of passages of Lorem Ipsum available, but the majority have a suffered alteration in some form, by injected humour.", number: "02" }, { id: 3, name: "Masirul Jones", role: "Team Leader", image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face&auto=format", rating: 5, quote: "There are many variations of passages of Lorem Ipsum available, but the majority have a suffered alteration in some form, by injected humour.", number: "03" }, { id: 4, name: "Masirul Jones", role: "Team Leader", image: "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?w=100&h=100&fit=crop&crop=face&auto=format", rating: 5, quote: "There are many variations of passages of Lorem Ipsum available, but the majority have a suffered alteration in some form, by injected humour.", number: "04" },
-   { id: 4, name: "Masirul Jones", role: "Team Leader", image: "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?w=100&h=100&fit=crop&crop=face&auto=format", rating: 5, quote: "There are many variations of passages of Lorem Ipsum available, but the majority have a suffered alteration in some form, by injected humour.", number: "04" }
- ];
+  const testimonials = [
+    {
+      id: 1,
+      name: "Sarah Williams",
+      role: "Patient – Flu Vaccination",
+      image:
+        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face&auto=format",
+      rating: 5,
+      quote:
+        "The pharmacist was very professional and explained everything clearly. Booking my flu jab was quick and stress-free.",
+      number: "01",
+    },
+    {
+      id: 2,
+      name: "James Carter",
+      role: "Patient – Travel Clinic",
+      image:
+        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face&auto=format",
+      rating: 5,
+      quote:
+        "I needed vaccines before travelling abroad. The team made it simple, efficient, and gave me peace of mind.",
+      number: "02",
+    },
+    {
+      id: 3,
+      name: "Emma Johnson",
+      role: "Patient – Blood Test",
+      image:
+        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face&auto=format",
+      rating: 5,
+      quote:
+        "I booked a blood test at my local pharmacy—fast results, friendly staff, and no long wait times like the hospital.",
+      number: "03",
+    },
+    {
+      id: 4,
+      name: "Michael Brown",
+      role: "Patient – Ear Wax Removal",
+      image:
+        "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?w=100&h=100&fit=crop&crop=face&auto=format",
+      rating: 5,
+      quote:
+        "Fantastic service! I can hear properly again after the microsuction treatment. Highly recommend this pharmacy.",
+      number: "04",
+    },
+  ];
 
   return (
     <div className="w-full bg-[#F8F8F8] py-32">
@@ -19,10 +62,10 @@ const testimonials = [ { id: 1, name: "Masirul Jones", role: "Team Leader", imag
         {/* Header */}
         <div className="mb-16 text-left">
           <p className="mb-2 text-sm font-medium uppercase tracking-wider text-gray-600">
-            WHAT WE DO
+            Patient Feedback
           </p>
           <h2 className="text-4xl font-bold text-gray-900 lg:text-5xl">
-            We Solve Digital Challenges
+            Trusted Care, Real Stories
           </h2>
         </div>
 
@@ -32,7 +75,6 @@ const testimonials = [ { id: 1, name: "Masirul Jones", role: "Team Leader", imag
           spaceBetween={30}
           onSwiper={(swiper) => {
             swiperRef.current = swiper;
-            // snapGrid length = number of pagination bullets
             setTotalPages(swiper.snapGrid.length);
           }}
           onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
@@ -60,7 +102,10 @@ const testimonials = [ { id: 1, name: "Masirul Jones", role: "Team Leader", imag
 
                 <div className="mb-4 flex space-x-1">
                   {Array.from({ length: t.rating }).map((_, i) => (
-                    <Star key={i} className="h-5 w-5 fill-orange-400 text-orange-400" />
+                    <Star
+                      key={i}
+                      className="h-5 w-5 fill-orange-400 text-orange-400"
+                    />
                   ))}
                 </div>
 
@@ -79,7 +124,9 @@ const testimonials = [ { id: 1, name: "Masirul Jones", role: "Team Leader", imag
               key={idx}
               onClick={() => swiperRef.current?.slideTo(idx)}
               className={`h-3 rounded-full transition-all duration-300 ${
-                activeIndex === idx ? 'w-28 bg-lime-500' : 'w-3 bg-gray-400/50'
+                activeIndex === idx
+                  ? 'w-28 bg-lime-500'
+                  : 'w-3 bg-gray-400/50'
               }`}
             />
           ))}

@@ -9,11 +9,11 @@ const About = () => {
   return (
     <div>
        <ScrollRestoration />
-        <Title title="About Us" desc="Easily handle your repeat prescriptions" />
+        <Title title="About Us" />
           <div className=' pt-[345px] mb-[100px]'>
              <WeAreOffering />
         <Unlock />
-        <Form />
+        {/* <Form /> */}
           </div>
     </div>
   )

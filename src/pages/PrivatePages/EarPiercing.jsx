@@ -15,31 +15,38 @@ import icons3 from '../../assets/icon8.png'
 import icons4 from '../../assets/icon6.png'
 import right from '../../assets/ear.png'
 import Main from '../../components/Piercing/Main'
+import { ScrollRestoration } from 'react-router-dom'
 const EarPiercing = () => {
-      const data = [
+   const data = [
           {
               icon:icon1,
-              title:"Vitamin B12"
+              title:"Vitamin B12",
+              path:"/vitamin-b12"
           },
           {
               icon:icon2,
-              title:"Flu Vaccination Service"
+              title:"Flu Vaccination Service",
+              path:"/flu-Vaccination-service"
           },
           {
               icon:icon3,
-              title:"UTI Treatment"
+              title:"UTI Treatment",
+               path:"/uti-treatment"
           },
           {
               icon:icon4,
-              title:"Cryotherapy"
+              title:"Cryotherapy",
+               path:"/cryotherapy"
           },
           {
               icon:icon5,
-              title:"Weight Management"
+              title:"Weight Management",
+               path:"/weight-management"
           },
           {
               icon:icon6,
-              title:"Blood Testing"
+              title:"Blood Testing",
+               path:"/blood-test"
           },
       ]
           const data1 = [
@@ -58,15 +65,15 @@ const EarPiercing = () => {
                 desc:"For more contact us:"
             },
                 {
-                desc:"238 Wheelwright Road, Erdington, Birmingham, B24 8EH 0121 377 8811"
+                desc:`Unit 9 Manor Road Industrial Estate`
             },
                     {
-                desc:"info@yourlocal-pharmacy.co.uk"
+                desc:"Unit 9 Manor Road Industrial Estate"
             },
-                
         ]
   return (
     <div>
+        <ScrollRestoration />
         <Title title="Ear Piercing" />
         <OtherServices data={data}  title="Ear Piercing"  desc1="If you’re thinking about getting a piercing, ask the piercer at Your Local Erdington Pharmacy.
 

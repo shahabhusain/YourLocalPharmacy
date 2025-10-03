@@ -34,8 +34,8 @@ const Navbar = () => {
     { pathName: "/prescription", title: "Prescription" },
     { pathName: "/flu-Vaccination-service", title: "Flu Vaccination" },
     { pathName: "/blogs", title: "Blogs" },
-    { pathName: "/health", title: "Health AtoZ" },
-    { pathName: "/medicine", title: "Medicine AtoZ" },
+    { pathName: "https://www.nhs.uk/health-a-to-z", title: "Health AtoZ" },
+    { pathName: "https://www.nhs.uk/medicines", title: "Medicine AtoZ" },
   ];
 
   /** ---------------- MOBILE ACCORDION ---------------- */

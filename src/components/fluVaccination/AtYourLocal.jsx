@@ -27,19 +27,19 @@ const AtYourLocal = () => {
     <div className=' w-[90%] mx-auto md:mt-[400px] mt-[300px] mb-[100px] flex flex-col gap-y-12'>
               <div className="flex flex-col md:flex-row items-start justify-between gap-6">
             <div className="text-start text-black text-[46px] font-semibold flex flex-col">
-              <span className="text-[16px] font-medium">At Your Local Eddington Pharmacy</span>
+              <span className="text-[16px] font-medium">At Your Manor Pharmacy</span>
              Easily handle your repeat prescriptions
             </div>
             <div className="text-[16px] text-black font-light max-w-md">
-          At Your Local Eddington Pharmacy, your health and well-being are at the heart of everything we do. We understand that each patient is unique, and we are dedicated to providing personalized, compassionate care tailored to your specific needs.
-                 <div className=' flex items-center gap-2'>
+          At Your Manor Pharmacy, your health and well-being are at the heart of everything we do. We understand that each patient is unique, and we are dedicated to providing personalized, compassionate care tailored to your specific needs.
+                 {/* <div className=' flex items-center gap-2'>
                      <span className="block border-b-2 border-[#80E900] text-black text-[12px] font-bold mt-2 cursor-pointer">
                  LOGIN
               </span>
               <span className="block border-b-2 border-[#80E900] text-black text-[12px] font-bold mt-2 cursor-pointer">
                  REGISTER
               </span>
-                 </div>
+                 </div> */}
             </div>
           </div>
 

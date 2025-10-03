@@ -15,31 +15,38 @@ import icons3 from '../../assets/icon8.png'
 import icons4 from '../../assets/icon6.png'
 import travel from '../../assets/tranvel.png'
 import Main from '../../components/NonTravelVaccancies/Main'
+import { ScrollRestoration } from 'react-router-dom'
 const NonTravelVaccination = () => {
-      const data = [
+   const data = [
           {
               icon:icon1,
-              title:"Vitamin B12"
+              title:"Vitamin B12",
+              path:"/vitamin-b12"
           },
           {
               icon:icon2,
-              title:"Flu Vaccination Service"
+              title:"Flu Vaccination Service",
+              path:"/flu-Vaccination-service"
           },
           {
               icon:icon3,
-              title:"UTI Treatment"
+              title:"UTI Treatment",
+               path:"/uti-treatment"
           },
           {
               icon:icon4,
-              title:"Cryotherapy"
+              title:"Cryotherapy",
+               path:"/cryotherapy"
           },
           {
               icon:icon5,
-              title:"Weight Management"
+              title:"Weight Management",
+               path:"/weight-management"
           },
           {
               icon:icon6,
-              title:"Blood Testing"
+              title:"Blood Testing",
+               path:"/blood-test"
           },
       ]
 
@@ -93,6 +100,7 @@ const vaccines = [
 
   return (
     <div>
+      <ScrollRestoration />
         <Title title="Non Travel Vaccination" />
         <OtherServices data={data}  title="Non Travel Vaccination"  desc1="PAt Your Local Erdington Pharmacy, we provide a full range of Non travel services We can administer vaccines to children as well as adults. Contact us to find out more about your trusted pharmacy in Birmingham." />
           <Main />

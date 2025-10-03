@@ -15,36 +15,44 @@ import icons3 from '../../assets/icon8.png'
 import icons4 from '../../assets/icon6.png'
 import ind from '../../assets/ind.png'
 import Main from '../../components/Independent/Main'
+import { ScrollRestoration } from 'react-router-dom'
 const IndependentPrescriber = () => {
-      const data = [
+   const data = [
           {
               icon:icon1,
-              title:"Vitamin B12"
+              title:"Vitamin B12",
+              path:"/vitamin-b12"
           },
           {
               icon:icon2,
-              title:"Flu Vaccination Service"
+              title:"Flu Vaccination Service",
+              path:"/flu-Vaccination-service"
           },
           {
               icon:icon3,
-              title:"UTI Treatment"
+              title:"UTI Treatment",
+               path:"/uti-treatment"
           },
           {
               icon:icon4,
-              title:"Cryotherapy"
+              title:"Cryotherapy",
+               path:"/cryotherapy"
           },
           {
               icon:icon5,
-              title:"Weight Management"
+              title:"Weight Management",
+               path:"/weight-management"
           },
           {
               icon:icon6,
-              title:"Blood Testing"
+              title:"Blood Testing",
+               path:"/blood-test"
           },
       ]
 
   return (
     <div>
+        <ScrollRestoration />
         <Title title="Independent Prescriber" />
         <OtherServices data={data}  title="Independent Prescriber"  desc1="We are able to treat a range of illnesses with prescription strength medication, at the discretion of the Prescriber. Consultation fee is £25.Independent prescribing is prescribing by a practitioner, who is responsible and accountable for the assessment of service users with undiagnosed or diagnosed conditions and for decisions about the clinical management required.
 "   />  

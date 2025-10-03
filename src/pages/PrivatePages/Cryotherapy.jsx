@@ -13,31 +13,38 @@ import icons1 from '../../assets/icon1.png'
 import icons2 from '../../assets/icon3.png'
 import right from '../../assets/cryp.png'
 import Main from '../../components/Cryotherapy/Main'
+import { ScrollRestoration } from 'react-router-dom'
 const Cryotherapy = () => {
-      const data = [
+   const data = [
           {
               icon:icon1,
-              title:"Vitamin B12"
+              title:"Vitamin B12",
+              path:"/vitamin-b12"
           },
           {
               icon:icon2,
-              title:"Flu Vaccination Service"
+              title:"Flu Vaccination Service",
+              path:"/flu-Vaccination-service"
           },
           {
               icon:icon3,
-              title:"UTI Treatment"
+              title:"UTI Treatment",
+               path:"/uti-treatment"
           },
           {
               icon:icon4,
-              title:"Cryotherapy"
+              title:"Cryotherapy",
+               path:"/cryotherapy"
           },
           {
               icon:icon5,
-              title:"Weight Management"
+              title:"Weight Management",
+               path:"/weight-management"
           },
           {
               icon:icon6,
-              title:"Blood Testing"
+              title:"Blood Testing",
+               path:"/blood-test"
           },
       ]
           const data1 = [
@@ -55,14 +62,15 @@ const Cryotherapy = () => {
                 desc:"For more contact us:"
             },
                 {
-                desc:`238 Wheelwright Road, Erdington, Birmingham, B24 8EH \n 0121 377 8811`
+                desc:`Unit 9 Manor Road Industrial Estate`
             },
                     {
-                desc:"info@yourlocal-pharmacy.co.uk"
+                desc:"Unit 9 Manor Road Industrial Estate"
             },
         ]
   return (
     <div>
+        <ScrollRestoration />
         <Title title="Cryotherapy" />
         <OtherServices data={data}  title="Cryotherapy"  desc1="Cryotherapy is a method of freezing which uses a substance called liquid nitrogen. A carefully controlled amount of liquid nitrogen is applied to the affected area of skin. This has the affect of freezing the targeted cells and destroying the lesion." desc2="The liquid nitrogen is usually applied using a spray gun or cotton bud for about 10 to 30 seconds. It feels cold, but most people find the discomfort quite bearable. A doctor or nurse may carry out your treatment." desc3="The redness and swelling usually lasts for a few days. Sometimes, a blister will form (blood in a blister is not sinister) just as with a burn. If this happens, keep the area clean. If necessary, do this using a dry dressing. If the blister becomes uncomfortable, use a clean needle to release the fluid."  />
         <ServiceWork data={data1}  />

@@ -15,31 +15,38 @@ import icons3 from '../../assets/icon8.png'
 import icons4 from '../../assets/icon6.png'
 import right from '../../assets/hype.png'
 import Main from '../../components/HypertensionService/Main'
+import { ScrollRestoration } from 'react-router-dom'
 const HypertensionCaseFindingService = () => {
-      const data = [
+   const data = [
           {
               icon:icon1,
-              title:"Vitamin B12"
+              title:"Vitamin B12",
+              path:"/vitamin-b12"
           },
           {
               icon:icon2,
-              title:"Flu Vaccination Service"
+              title:"Flu Vaccination Service",
+              path:"/flu-Vaccination-service"
           },
           {
               icon:icon3,
-              title:"UTI Treatment"
+              title:"UTI Treatment",
+               path:"/uti-treatment"
           },
           {
               icon:icon4,
-              title:"Cryotherapy"
+              title:"Cryotherapy",
+               path:"/cryotherapy"
           },
           {
               icon:icon5,
-              title:"Weight Management"
+              title:"Weight Management",
+               path:"/weight-management"
           },
           {
               icon:icon6,
-              title:"Blood Testing"
+              title:"Blood Testing",
+               path:"/blood-test"
           },
       ]
           const data1 = [
@@ -58,15 +65,15 @@ const HypertensionCaseFindingService = () => {
                 desc:"For more contact us:"
             },
                 {
-                desc:"238 Wheelwright Road, Erdington, Birmingham, B24 8EH 0121 377 8811"
+                desc:`Unit 9 Manor Road Industrial Estate`
             },
                     {
-                desc:"info@yourlocal-pharmacy.co.uk"
+                desc:"Unit 9 Manor Road Industrial Estate"
             },
-                
         ]
   return (
     <div>
+        <ScrollRestoration />
         <Title title="Hypertension Case Finding Service" />
         <OtherServices data={data}  title="Hypertension Case Finding Service"  desc1="The NHS Community Pharmacy Hypertension Case-Finding Advanced Service was announced on 24 August 2021 as part of the Year 3 Community Pharmacy Contractual Framework and was launched on 1st October 2021." desc2="The aims and objectives of this service are to: identify people aged 40 years or older with high blood pressure, who have previously not had a confirmed diagnosis of hypertension, and to refer them to general practice to confirm diagnosis and for appropriate management (this can include people under 40 years, at the discretion of a pharmacist)
 undertake clinic and ambulatory blood pressure checks when necessary, at the request of a general practice.

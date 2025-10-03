@@ -15,31 +15,38 @@ import icons3 from '../../assets/icon8.png'
 import icons4 from '../../assets/icon6.png'
 import right from '../../assets/uti.png'
 import Main from '../../components/UIT/Main'
+import { ScrollRestoration } from 'react-router-dom'
 const UTITreatment = () => {
-      const data = [
+   const data = [
           {
               icon:icon1,
-              title:"Vitamin B12"
+              title:"Vitamin B12",
+              path:"/vitamin-b12"
           },
           {
               icon:icon2,
-              title:"Flu Vaccination Service"
+              title:"Flu Vaccination Service",
+              path:"/flu-Vaccination-service"
           },
           {
               icon:icon3,
-              title:"UTI Treatment"
+              title:"UTI Treatment",
+               path:"/uti-treatment"
           },
           {
               icon:icon4,
-              title:"Cryotherapy"
+              title:"Cryotherapy",
+               path:"/cryotherapy"
           },
           {
               icon:icon5,
-              title:"Weight Management"
+              title:"Weight Management",
+               path:"/weight-management"
           },
           {
               icon:icon6,
-              title:"Blood Testing"
+              title:"Blood Testing",
+               path:"/blood-test"
           },
       ]
           const data1 = [
@@ -58,15 +65,15 @@ const UTITreatment = () => {
                 desc:"For more contact us:"
             },
                 {
-                desc:"238 Wheelwright Road, Erdington, Birmingham, B24 8EH 0121 377 8811"
+                desc:`Unit 9 Manor Road Industrial Estate`
             },
                     {
-                desc:"info@yourlocal-pharmacy.co.uk"
+                desc:"Unit 9 Manor Road Industrial Estate"
             },
-                
         ]
   return (
     <div>
+        <ScrollRestoration />
         <Title title="UTI Treatment" />
         <OtherServices data={data}  title="UTI Treatment"  desc1="Urinary tract infections (UTIs) are common infections that affect the bladder, the kidneys and the tubes connected to them.Anyone can get them, but they’re particularly common in women. Some women experience them regularly (called recurrent UTIs).UTIs can be painful and uncomfortable, but usually pass within a few days and can be treated with antibiotics." desc2="pain or a burning sensation when peeing (dysuria)
 needing to pee more often than usual during the night (nocturia)

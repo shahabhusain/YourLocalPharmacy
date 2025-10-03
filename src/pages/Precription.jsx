@@ -8,7 +8,7 @@ const Precription = () => {
   return (
     <div>
       <ScrollRestoration />
-        <Title title="Prescriptions" desc="Easily handle your repeat prescriptions" />
+        <Title title="Prescriptions" />
           <div className=''>
             <EasilyHandle />
             <Join />

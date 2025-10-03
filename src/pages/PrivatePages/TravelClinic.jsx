@@ -15,31 +15,38 @@ import icons3 from '../../assets/icon8.png'
 import icons4 from '../../assets/icon6.png'
 import travel from '../../assets/tranvel.png'
 import Main from '../../components/TravelClinic/Main'
+import { ScrollRestoration } from 'react-router-dom'
 const TravelClinic = () => {
-      const data = [
+   const data = [
           {
               icon:icon1,
-              title:"Vitamin B12"
+              title:"Vitamin B12",
+              path:"/vitamin-b12"
           },
           {
               icon:icon2,
-              title:"Flu Vaccination Service"
+              title:"Flu Vaccination Service",
+              path:"/flu-Vaccination-service"
           },
           {
               icon:icon3,
-              title:"UTI Treatment"
+              title:"UTI Treatment",
+               path:"/uti-treatment"
           },
           {
               icon:icon4,
-              title:"Cryotherapy"
+              title:"Cryotherapy",
+               path:"/cryotherapy"
           },
           {
               icon:icon5,
-              title:"Weight Management"
+              title:"Weight Management",
+               path:"/weight-management"
           },
           {
               icon:icon6,
-              title:"Blood Testing"
+              title:"Blood Testing",
+               path:"/blood-test"
           },
       ]
           const data1 = [
@@ -168,6 +175,7 @@ const TravelClinic = () => {
 
   return (
     <div>
+      <ScrollRestoration />
         <Title title="Travel Clinic" />
         <OtherServices data={data}  title="Travel Clinic"  desc1="Planning a trip abroad, whether it’s a family vacation, a religious pilgrimage, or a backpacking adventure, requires careful preparation, especially regarding your health. At Your Local Erdington Pharmacy Travel Clinic in Erdington, Birmingham, we understand the unique needs of travelers and are committed to providing expert advice and essential vaccinations to ensure a safe and healthy journey." desc2="Convenience: Easily accessible location in Erdington, Birmingham, close to B24, B23, B8, and B7 postcodes.
 Expertise:Our pharmacists are knowledgeable about travel health and can advise on the necessary vaccinations and medications for your destination.

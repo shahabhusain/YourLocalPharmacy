@@ -14,31 +14,38 @@ import icons2 from '../../assets/icon3.png'
 import icons3 from '../../assets/icon8.png'
 import icons4 from '../../assets/icon6.png'
 import right from '../../assets/cons.jpg'
+import { ScrollRestoration } from 'react-router-dom'
 const ContraceptionService = () => {
-      const data = [
+   const data = [
           {
               icon:icon1,
-              title:"Vitamin B12"
+              title:"Vitamin B12",
+              path:"/vitamin-b12"
           },
           {
               icon:icon2,
-              title:"Flu Vaccination Service"
+              title:"Flu Vaccination Service",
+              path:"/flu-Vaccination-service"
           },
           {
               icon:icon3,
-              title:"UTI Treatment"
+              title:"UTI Treatment",
+               path:"/uti-treatment"
           },
           {
               icon:icon4,
-              title:"Cryotherapy"
+              title:"Cryotherapy",
+               path:"/cryotherapy"
           },
           {
               icon:icon5,
-              title:"Weight Management"
+              title:"Weight Management",
+               path:"/weight-management"
           },
           {
               icon:icon6,
-              title:"Blood Testing"
+              title:"Blood Testing",
+               path:"/blood-test"
           },
       ]
           const data1 = [
@@ -73,14 +80,15 @@ const ContraceptionService = () => {
                 desc:"For more contact us:"
             },
                 {
-                desc:`238 Wheelwright Road, Erdington, Birmingham, B24 8EH \n 0121 377 8811`
+                desc:`Unit 9 Manor Road Industrial Estate`
             },
                     {
-                desc:"info@yourlocal-pharmacy.co.uk"
+                desc:"Unit 9 Manor Road Industrial Estate"
             },
         ]
   return (
     <div>
+        <ScrollRestoration />
         <Title title="NHS Contraception Service" />
         <OtherServices data={data}  title="NHS Contraception Service"  desc1="Are you considering your choices or do you need your next supply of your contraceptive pill? You can now arrange to speak to a pharmacist to help you consider your contraception choices, get started on contraceptive pills or get your next supply directly from Your Local Erdington Pharmacy." desc2="Taking your blood pressure, weight, height and asking about your medical history. The pharmacist will discuss any concerns you have. For example, you can tell them if you have side effects from your contraception. If you have side effects, the pharmacist will be able to help identify ways of managing these and, if needed, refer you to your GP surgery or sexual health clinic for further support." desc3="I want to understand what my choices of contraception are, how can this pharmacy service help me? Yes, the pharmacist can talk through your options and where suitable, is able to start or issue you a different contraceptive pill. Where necessary, the pharmacist can refer you to your GP surgery or sexual health clinic for other options."  />
         <ServiceWork data={data1}  />

@@ -15,31 +15,38 @@ import icons3 from '../../assets/icon8.png'
 import icons4 from '../../assets/icon6.png'
 import right from '../../assets/tit.png'
 import Main from '../../components/Altitude/Main'
+import { ScrollRestoration } from 'react-router-dom'
 const AltitudeSicknessTreatment = () => {
-      const data = [
+   const data = [
           {
               icon:icon1,
-              title:"Vitamin B12"
+              title:"Vitamin B12",
+              path:"/vitamin-b12"
           },
           {
               icon:icon2,
-              title:"Flu Vaccination Service"
+              title:"Flu Vaccination Service",
+              path:"/flu-Vaccination-service"
           },
           {
               icon:icon3,
-              title:"UTI Treatment"
+              title:"UTI Treatment",
+               path:"/uti-treatment"
           },
           {
               icon:icon4,
-              title:"Cryotherapy"
+              title:"Cryotherapy",
+               path:"/cryotherapy"
           },
           {
               icon:icon5,
-              title:"Weight Management"
+              title:"Weight Management",
+               path:"/weight-management"
           },
           {
               icon:icon6,
-              title:"Blood Testing"
+              title:"Blood Testing",
+               path:"/blood-test"
           },
       ]
           const data1 = [
@@ -58,14 +65,12 @@ const AltitudeSicknessTreatment = () => {
                 desc:"For more contact us:"
             },
                 {
-                desc:"238 Wheelwright Road, Erdington, Birmingham, B24 8EH 0121 377 8811"
+                desc:`Unit 9 Manor Road Industrial Estate`
             },
                     {
-                desc:"info@yourlocal-pharmacy.co.uk"
+                desc:"Unit 9 Manor Road Industrial Estate"
             },
-                
         ]
-
           const faqData = [
     {
       question: "What is altitude sickness?",
@@ -90,6 +95,7 @@ const AltitudeSicknessTreatment = () => {
   ];
   return (
     <div>
+        <ScrollRestoration />
         <Title title="Altitude Sickness Treatment" />
         <OtherServices data={data}  title="Altitude Sickness Treatment"  desc1="Altitude sickness can put a dampener on your mountain adventure. Symptoms like headaches, nausea, and fatigue can quickly turn your trip into a challenge. In severe cases, altitude sickness can even be dangerous. It's essential to listen to your body and take precautions to avoid these uncomfortable and potentially harmful effects." desc2="Altitude sickness, also known as acute mountain sickness (AMS), is a condition that occurs when a person ascends to a high altitude too quickly. The body struggles to adjust to the reduced oxygen levels, leading to various symptoms."  />
         <ServiceWork data={data1}  />

@@ -15,31 +15,38 @@ import icons3 from '../../assets/icon8.png'
 import icons4 from '../../assets/icon6.png'
 import umrah from '../../assets/umrah.jpg'
 import Main from '../../components/Hajj&Umrah/Main'
+import { ScrollRestoration } from 'react-router-dom'
 const UmrahVaccination = () => {
-      const data = [
+   const data = [
           {
               icon:icon1,
-              title:"Vitamin B12"
+              title:"Vitamin B12",
+              path:"/vitamin-b12"
           },
           {
               icon:icon2,
-              title:"Flu Vaccination Service"
+              title:"Flu Vaccination Service",
+              path:"/flu-Vaccination-service"
           },
           {
               icon:icon3,
-              title:"UTI Treatment"
+              title:"UTI Treatment",
+               path:"/uti-treatment"
           },
           {
               icon:icon4,
-              title:"Cryotherapy"
+              title:"Cryotherapy",
+               path:"/cryotherapy"
           },
           {
               icon:icon5,
-              title:"Weight Management"
+              title:"Weight Management",
+               path:"/weight-management"
           },
           {
               icon:icon6,
-              title:"Blood Testing"
+              title:"Blood Testing",
+               path:"/blood-test"
           },
       ]
           const data1 = [
@@ -63,6 +70,7 @@ const UmrahVaccination = () => {
 
   return (
     <div>
+        <ScrollRestoration />
         <Title title="Hajj & Umrah Vaccination" />
         <OtherServices data={data}  title="Hajj & Umrah Vaccination"  desc1="If you're preparing for Hajj or Umrah, remember that Saudi Arabia travel requirements include proof of the Meningococcal (Meningitis) ACWY vaccine." desc2="We offer the essential Meningococcal (Meningitis) ACWY vaccine and certificate service right here in Erdington. Book Online Now to avoid any last-minute stress and ensure you meet the Hajj and Umrah vaccination requirements." desc3="We recommend scheduling your appointment 6–8 weeks before your travel date to allow ample time for your body to develop immunity."  />
         <ServiceWork data={data1}  />

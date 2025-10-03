@@ -1,36 +1,63 @@
 import React from 'react';
 import { IoMdArrowForward } from 'react-icons/io';
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const workingHours = [
-    { day: 'Monday', hours: '9:00 AM - 5:30 PM', isOpen: true },
-    { day: 'Tuesday', hours: '9:00 AM - 5:30 PM', isOpen: true },
-    { day: 'Wednesday', hours: '9:00 AM - 7:00 PM', isOpen: true },
-    { day: 'Thursday', hours: '9:00 AM - 5:30 PM', isOpen: true },
-    { day: 'Friday', hours: '9:00 AM - 5:30 PM', isOpen: true },
+    { day: 'Monday', hours: '10:00 AM - 5:30 PM', isOpen: true },
+    { day: 'Tuesday', hours: '10:00 AM - 5:30 PM', isOpen: true },
+    { day: 'Wednesday', hours: '10:00 AM - 7:00 PM', isOpen: true },
+    { day: 'Thursday', hours: '10:00 AM - 5:30 PM', isOpen: true },
+    { day: 'Friday', hours: '10:00 AM - 5:30 PM', isOpen: true },
     { day: 'Saturday', hours: '10:00 AM - 2:00 PM', isOpen: true },
     { day: 'Sunday', hours: 'Closed', isOpen: false }
   ];
 
   const serviceLinks = [
-    'Our Services',
-    'Health A to Z',
-    'Medicine A-Z',
-    'Cookie Policy',
-    'Terms and Condition'
+    {title:'Our Services',
+      path:"/services"
+    },
+     {title:'Health A to Z',
+      path:"https://www.nhs.uk/health-a-to-z"
+    },
+     {title:'Medicine A-Z',
+      path:"https://www.nhs.uk/medicines"
+    },
+     {title:'Cookie Policy',
+      path:"/"
+    },
+      {title:'Terms and Condition',
+      path:"/"
+    }
   ];
 
   const practiceLinks = [
-    'Home',
-    'About',
-    'Our Services',
-    'Prescription',
-    'Flu Vaccination',
-    'Blogs',
-    'Health A to Z',
-    'Medicine A-Z'
+    {title:"Home",
+      path:"/"
+    },
+     {title:"About",
+      path:"/about-us"
+    },
+     {title:"Our Services",
+      path:"/services"
+    },
+     {title:"Prescription",
+      path:"/prescription"
+    },
+     {title:"Flu Vaccination",
+      path:"/flu-Vaccination-service"
+    },
+     {title:"Blogs",
+      path:"/blogs"
+    },
+     {title:"Health A to Z",
+      path:"/https://www.nhs.uk/health-a-to-z"
+    },
+     {title:"Medicine A to Z",
+      path:"/https://www.nhs.uk/medicines"
+    },
   ];
 
   return (
@@ -44,29 +71,29 @@ export default function Footer() {
             <div className="space-y-4">
               <div className="flex items-start space-x-3 group">
                 <div className="text-gray-300 group-hover:text-white transition-colors">
-                  <p className=' text-[14px] font-semibold'>238 Wheelwright Road, Erdington,</p>
-                  <p className=' text-[14px] font-semibold'>Birmingham, B24 8EH</p>
+                  <p className=' text-[14px] font-semibold'>Unit 9 Manor Road Industrial Estate</p>
+          
                 </div>
               </div>
               
               <div className="flex items-center space-x-3 group cursor-pointer">
                 <a href="tel:01213778811" className="text-gray-300  text-[14px] font-semibold  hover:text-white transition-colors">
-                  0121 377 8811
+                  123 123 123 123
                 </a>
               </div>
               
               <div className="flex items-center space-x-3 group cursor-pointer">
                 <a href="mailto:info@yourlocal-pharmacy.co.uk" className="text-gray-300  text-[14px] font-semibold hover:text-white transition-colors break-all">
-                  info@yourlocal-pharmacy.co.uk
+                  info@manorpharmacy.co.uk
                 </a>
               </div>
               
               <div className="pt-4 space-y-2">
                 <p className=" text-[14px] font-semibold text-gray-400">
-                  <span className=" text-gray-300">Premises GPhC Number:</span> 1038170
+                  <span className=" text-gray-300">Premises GPhC Number:</span> 9012641
                 </p>
                 <p className=" text-[14px] font-semibold text-gray-400">
-                  <span className=" text-gray-300">Superintendent Pharmacist:</span> Zainab Master (2060641)
+                  <span className=" text-gray-300">Superintendent Pharmacist:</span> Mr M Ayaz (Registration No 2059663 )
                 </p>
               </div>
             </div>
@@ -78,14 +105,13 @@ export default function Footer() {
             <ul className="space-y-3">
               {serviceLinks.map((link, index) => (
                 <li key={index}>
-                  <a 
-                    href="#" 
+                  <button
                     className="text-gray-300 hover:text-lime-400 transition-all duration-300 hover:translate-x-1 inline-block group"
                   >
-                    <span className="group-hover:border-b  text-[14px] font-semibold group-hover:border-lime-400 transition-all">
-                      {link}
-                    </span>
-                  </a>
+                    <Link to={link.path} className="group-hover:border-b  text-[14px] font-semibold group-hover:border-lime-400 transition-all">
+                      {link.title}
+                    </Link>
+                  </button>
                 </li>
               ))}
             </ul>
@@ -97,14 +123,13 @@ export default function Footer() {
             <ul className="space-y-3">
               {practiceLinks.map((link, index) => (
                 <li key={index}>
-                  <a 
-                    href="#" 
+                  <button
                     className="text-gray-300 hover:text-lime-400 transition-all duration-300 hover:translate-x-1 inline-block group"
                   >
-                    <span className="group-hover:border-b  text-[14px] font-semibold group-hover:border-lime-400 transition-all">
-                      {link}
-                    </span>
-                  </a>
+                    <Link to={link.path} className="group-hover:border-b  text-[14px] font-semibold group-hover:border-lime-400 transition-all">
+                      {link.title}
+                    </Link>
+                  </button>
                 </li>
               ))}
             </ul>
@@ -128,7 +153,22 @@ export default function Footer() {
                     </span>
                   </div>
                 ))}
-                 <button className=' flex mt-6  text-[#fff] items-center '> <span className='bg-[#80E900] rounded-full py-3 px-6 '>Booking Appointment</span> <span className='h-[45px] w-[45px] rotate-320 flex items-center justify-center bg-[#80E900] rounded-full'><IoMdArrowForward size={20} /></span></button>
+                      <Link
+          to="/appointment"
+          className="flex items-center  text-white group"
+        >
+          <span className="bg-[#80E900] rounded-full py-3 px-6
+                           transition-all duration-300 
+                           group-hover:scale-105 group-hover:shadow-lg">
+            Booking Appointment
+          </span>
+          <span className="h-[45px] w-[45px] rotate-[320deg] flex items-center justify-center 
+                           bg-[#80E900] rounded-full 
+                           transition-transform duration-300 
+                           group-hover:translate-x-1 group-hover:rotate-[360deg]">
+            <IoMdArrowForward size={20} />
+          </span>
+        </Link>
               </div>
               
             </div>
@@ -141,7 +181,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-6 py-6">
           <div className="text-center">
             <p className="text-gray-400 text-sm">
-              yourlocal-pharmacy © {currentYear} All Rights Reserved.
+              manorpharmacy © {currentYear} All Rights Reserved.
             </p>
           </div>
         </div>

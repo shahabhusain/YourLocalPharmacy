@@ -11,48 +11,55 @@ import icon6 from '../../assets/icons6.png'
 
 import right from '../../assets/bcg.jpg'
 import Main from '../../components/BCG/Main'
+import { ScrollRestoration } from 'react-router-dom'
 const BCGScarChecks = () => {
-      const data = [
+   const data = [
           {
               icon:icon1,
-              title:"Vitamin B12"
+              title:"Vitamin B12",
+              path:"/vitamin-b12"
           },
           {
               icon:icon2,
-              title:"Flu Vaccination Service"
+              title:"Flu Vaccination Service",
+              path:"/flu-Vaccination-service"
           },
           {
               icon:icon3,
-              title:"UTI Treatment"
+              title:"UTI Treatment",
+               path:"/uti-treatment"
           },
           {
               icon:icon4,
-              title:"Cryotherapy"
+              title:"Cryotherapy",
+               path:"/cryotherapy"
           },
           {
               icon:icon5,
-              title:"Weight Management"
+              title:"Weight Management",
+               path:"/weight-management"
           },
           {
               icon:icon6,
-              title:"Blood Testing"
+              title:"Blood Testing",
+               path:"/blood-test"
           },
       ]
 
-        const data2 = [
+                const data2 = [
             {
                 desc:"For more contact us:"
             },
                 {
-                desc:"238 Wheelwright Road, Erdington, Birmingham, B24 8EH 0121 377 8811"
+                desc:`Unit 9 Manor Road Industrial Estate`
             },
                     {
-                desc:"info@yourlocal-pharmacy.co.uk"
+                desc:"Unit 9 Manor Road Industrial Estate"
             },
-                
         ]
   return (
     <div className=' mt-20'>
+        <ScrollRestoration />
         <Title title="BCG Scar Checks" />
         <OtherServices data={data}  title="BCG Scar Checks"  desc1="Your Local Erdington Pharmacy provide a BCG Scar Check Service, which involves a healthcare professional taking a vaccination history and physically checking the arm for a scar to see whether that person has received the BCG vaccination.
 This service is suitable for all patients over 18+ years of age.

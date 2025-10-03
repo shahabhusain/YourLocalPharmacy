@@ -14,31 +14,38 @@ import icons2 from '../../assets/icon3.png'
 import icons3 from '../../assets/icon8.png'
 import icons4 from '../../assets/icon6.png'
 import Main from '../../components/Pharmacy/Main'
+import { ScrollRestoration } from 'react-router-dom'
 const PharmacyFirst = () => {
-      const data = [
+   const data = [
           {
               icon:icon1,
-              title:"Vitamin B12"
+              title:"Vitamin B12",
+              path:"/vitamin-b12"
           },
           {
               icon:icon2,
-              title:"Flu Vaccination Service"
+              title:"Flu Vaccination Service",
+              path:"/flu-Vaccination-service"
           },
           {
               icon:icon3,
-              title:"UTI Treatment"
+              title:"UTI Treatment",
+               path:"/uti-treatment"
           },
           {
               icon:icon4,
-              title:"Cryotherapy"
+              title:"Cryotherapy",
+               path:"/cryotherapy"
           },
           {
               icon:icon5,
-              title:"Weight Management"
+              title:"Weight Management",
+               path:"/weight-management"
           },
           {
               icon:icon6,
-              title:"Blood Testing"
+              title:"Blood Testing",
+               path:"/blood-test"
           },
       ]
           const data1 = [
@@ -127,6 +134,7 @@ const PharmacyFirst = () => {
 
   return (
     <div className=' mt-20'>
+      <ScrollRestoration />
         <Title title="Pharmacy First" />
         <OtherServices data={data}  title="Pharmacy First"  desc1="Worried about a minor illness but don’t have time for a GP appointment? Look no further than Your Local Erdington Pharmacy !" desc2="Thanks to the innovative NHS Pharmacy First service, you can now seek treatment for seven common conditions directly from your friendly neighbourhood pharmacist, saving you valuable time and resources." />
         <ServiceWork data={data1}  />

@@ -12,31 +12,38 @@ import icon6 from '../../assets/icons6.png'
 import icons1 from '../../assets/icon1.png'
 import icons2 from '../../assets/icon3.png'
 import weight from '../../assets/weight.png'
+import { ScrollRestoration } from 'react-router-dom'
 const VitaminB12 = () => {
-      const data = [
+   const data = [
           {
               icon:icon1,
-              title:"Vitamin B12"
+              title:"Vitamin B12",
+              path:"/vitamin-b12"
           },
           {
               icon:icon2,
-              title:"Flu Vaccination Service"
+              title:"Flu Vaccination Service",
+              path:"/flu-Vaccination-service"
           },
           {
               icon:icon3,
-              title:"UTI Treatment"
+              title:"UTI Treatment",
+               path:"/uti-treatment"
           },
           {
               icon:icon4,
-              title:"Cryotherapy"
+              title:"Cryotherapy",
+               path:"/cryotherapy"
           },
           {
               icon:icon5,
-              title:"Weight Management"
+              title:"Weight Management",
+               path:"/weight-management"
           },
           {
               icon:icon6,
-              title:"Blood Testing"
+              title:"Blood Testing",
+               path:"/blood-test"
           },
       ]
 
@@ -99,6 +106,7 @@ const VitaminB12 = () => {
 ];
   return (
     <div>
+      <ScrollRestoration />
         <Title title="Weight Management" />
           <div className=' md:mt-[450px] mt-[333px] w-[80%] mx-auto object-cover'>
             <img src={weight} alt="" />

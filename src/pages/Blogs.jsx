@@ -8,7 +8,7 @@ const Blogs = () => {
   return (
     <div>
       <ScrollRestoration />
-        <Title title="Blogs" desc="Easily handle your repeat prescriptions" />
+        <Title title="Blogs" />
         <Blog />
         <BlogJoin />
     </div>

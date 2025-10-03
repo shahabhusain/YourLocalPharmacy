@@ -69,10 +69,13 @@ const DateTime = ({ component, setComponent }) => {
     setSlots(newSlots);
   }, [value, bookedSlots]);
 
+  const handleNavigate = () => {
+    setComponent(3);
+  }
+
   const handleSlotClick = (item) => {
     setSelected(item);
     localStorage.setItem("selectedSlot", JSON.stringify(item));
-    setComponent(3);
   };
 
   const tileDisabled = ({ date, view }) => {
@@ -136,22 +139,42 @@ const DateTime = ({ component, setComponent }) => {
       <div className="flex items-center gap-4 absolute bottom-3 right-3">
         <button
           onClick={() => setComponent(1)}
-          className="bg-[#80e90086] rounded-full py-3 px-6 text-white"
+          className="border-[#80e90086] border-[2px] text-black rounded-full py-3 px-6 "
         >
           Back
         </button>
-        <button
-          onClick={() => selected && setComponent(3)}
-          disabled={!selected}
-          className={`flex text-white items-center ${
-            !selected ? "opacity-40 cursor-not-allowed" : ""
-          }`}
-        >
-          <span className="bg-[#80E900] rounded-full py-3 px-6">Next</span>
-          <span className="h-[45px] w-[45px] flex items-center justify-center bg-[#80E900] rounded-full">
-            <IoMdArrowForward size={20} />
-          </span>
-        </button>
+
+
+    <button
+  onClick={() => selected && handleNavigate()}
+  disabled={!selected}
+  aria-disabled={selected === null}
+  className={`flex items-center text-white group ${
+    !selected ? "opacity-40 cursor-not-allowed" : ""
+  }`}
+>
+  {/* Text */}
+  <span
+    className="bg-[#80E900] rounded-full py-3 px-6
+               transition-all duration-300 ease-in-out
+               group-hover:scale-105 group-hover:shadow-lg
+               group-disabled:scale-100 group-disabled:shadow-none"
+  >
+    Next
+  </span>
+
+  {/* Arrow */}
+  <span
+    className="h-[45px] w-[45px] rotate-[320deg] flex items-center justify-center 
+               bg-[#80E900] rounded-full 
+               transition-transform duration-300 ease-in-out
+               group-hover:translate-x-1 group-hover:rotate-[360deg]
+               group-disabled:translate-x-0 group-disabled:rotate-[320deg]"
+  >
+    <IoMdArrowForward size={20} />
+  </span>
+</button>
+
       </div>
     </div>
   );

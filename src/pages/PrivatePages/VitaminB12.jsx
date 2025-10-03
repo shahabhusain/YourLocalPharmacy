@@ -12,31 +12,38 @@ import icon6 from '../../assets/icons6.png'
 import icons1 from '../../assets/icon1.png'
 import icons2 from '../../assets/icon3.png'
 import Main from '../../components/VitB12/Main'
+import { ScrollRestoration } from 'react-router-dom'
 const VitaminB12 = () => {
-      const data = [
+   const data = [
           {
               icon:icon1,
-              title:"Vitamin B12"
+              title:"Vitamin B12",
+              path:"/vitamin-b12"
           },
           {
               icon:icon2,
-              title:"Flu Vaccination Service"
+              title:"Flu Vaccination Service",
+              path:"/flu-Vaccination-service"
           },
           {
               icon:icon3,
-              title:"UTI Treatment"
+              title:"UTI Treatment",
+               path:"/uti-treatment"
           },
           {
               icon:icon4,
-              title:"Cryotherapy"
+              title:"Cryotherapy",
+               path:"/cryotherapy"
           },
           {
               icon:icon5,
-              title:"Weight Management"
+              title:"Weight Management",
+               path:"/weight-management"
           },
           {
               icon:icon6,
-              title:"Blood Testing"
+              title:"Blood Testing",
+               path:"/blood-test"
           },
       ]
           const data1 = [
@@ -71,6 +78,7 @@ const VitaminB12 = () => {
 
   return (
     <div>
+      <ScrollRestoration />
         <Title title="Vitamin B12" />
         <OtherServices data={data}  title="Vitamin B12"  desc1="Feeling run down and tired all of the time? Find it difficult to become motivated or stay focused? Feeling low in mood or energy levels? Struggle to sleep or fight off infections? You may be deficient in Vitamin B12. Good news though, you can get the Vitamin B12 Injection in Birmingham through Your Local Erdington Pharmacy." desc2="Vitamin B12 is a micronutrient called cobalamin. It is one of 13 essential vitamins that our bodies require to stay alive and remain healthy. Vitamin B12 plays a crucial role in a number of bodily functions:
 

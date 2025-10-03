@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 const Hero = () => {
   return (
     <div className=' bg1 absolute top-0 z-[1] h-full flex flex-col items-center justify-center gap-y-5 w-full '>
-        <h1 className=' lg:text-[80px] md:text-[50px] text-[40px] font-bold text-black text-center md:leading-[6rem] max-w-[1055px]'>Your Trusted Manor Independent Pharmacy</h1>
+        <h1 className=' lg:text-[80px] md:text-[50px] text-[40px] font-bold text-black text-center md:leading-[6rem] max-w-[1055px]'>Your Trusted Manor Pharmacy</h1>
         <p className=' text-[14px] font-medium text-black text-center'>Serving Eddington, Gravelly Hill, Washroom Heath, Sutton Cloudfield, Aston & beyond with modern healthcare services.</p>
               <Link
   to="/appointment"

@@ -9,7 +9,7 @@ const Services = () => {
   return (
     <div>
       <ScrollRestoration />
-        <Title title="Our Services" desc="Serving Eddington, Gravelly Hill, Washroom Heath, Sutton Cloudfield, Aston & beyond with modern healthcare services." />
+        <Title title="Our Services" />
         <Service />
         <Unlock />
         <WeSolveDigital />
