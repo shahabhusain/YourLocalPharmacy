@@ -34,8 +34,8 @@ const Navbar = () => {
     { pathName: "/prescription", title: "Prescription" },
     { pathName: "/flu-Vaccination-service", title: "Flu Vaccination" },
     { pathName: "/blogs", title: "Blogs" },
-    { pathName: "https://www.nhs.uk/health-a-to-z", title: "Health AtoZ" },
-    { pathName: "https://www.nhs.uk/medicines", title: "Medicine AtoZ" },
+    { pathName: "/https://www.nhs.uk/health-a-to-z", title: "Health AtoZ" },
+    { pathName: "/medicine", title: "Medicine AtoZ" },
   ];
 
   /** ---------------- MOBILE ACCORDION ---------------- */
@@ -122,7 +122,7 @@ const Navbar = () => {
                 <li><Link to="/hypertension-case-finding-service">Hypertension Case Finding</Link></li>
                 <li><a href="https://111.nhs.uk/emergency-prescription">Emergency Supply</a></li>
                 <li><Link to="/nhs-contraception-service">NHS Contraception</Link></li>
-                <li><Link to="/pharmacy-first">Pharmacy First</Link></li>
+                {/* <li><Link to="/pharmacy-first">Pharmacy First</Link></li> */}
               </ul>
             )}
           </div>

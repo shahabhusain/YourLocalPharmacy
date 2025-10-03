@@ -84,50 +84,50 @@ const PharmacyFirst = () => {
     ]
 
     const conditions = [
-  {
-    name: "Sinusitis",
-    qr: "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://example.com/sinusitis",
-    description: "Stuffy nose, facial pain, headache, sinus pressure.",
-    link: "https://example.com/sinusitis",
-  },
-  {
-    name: "Sore throat",
-    qr: "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://example.com/sore-throat",
-    description: "Painful or scratchy throat, difficulty swallowing.",
-    link: "https://example.com/sore-throat",
-  },
-    {
-    name: "Acute Otitis Media",
-    qr: "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://example.com/sore-throat",
-    description: "Ear pain, discomfort, hearing loss.",
-    link: "https://example.com/sore-throat",
-  },
-    {
-    name: "Infected insect bite",
-    qr: "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://example.com/sore-throat",
-    description: "Redness, swelling, pain, pus at the bite site.",
-    link: "https://example.com/sore-throat",
-  },
-    {
-    name: "Impetigo",
-    qr: "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://example.com/sore-throat",
-    description: "Redness, swelling, pain, pus at the bite site.",
-    link: "https://example.com/sore-throat",
-  },
+  // {
+  //   name: "Sinusitis",
+  //   qr: "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://example.com/sinusitis",
+  //   description: "Stuffy nose, facial pain, headache, sinus pressure.",
+  //   link: "https://example.com/sinusitis",
+  // },
+  // {
+  //   name: "Sore throat",
+  //   qr: "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://example.com/sore-throat",
+  //   description: "Painful or scratchy throat, difficulty swallowing.",
+  //   link: "https://example.com/sore-throat",
+  // },
+  //   {
+  //   name: "Acute Otitis Media",
+  //   qr: "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://example.com/sore-throat",
+  //   description: "Ear pain, discomfort, hearing loss.",
+  //   link: "https://example.com/sore-throat",
+  // },
+  //   {
+  //   name: "Infected insect bite",
+  //   qr: "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://example.com/sore-throat",
+  //   description: "Redness, swelling, pain, pus at the bite site.",
+  //   link: "https://example.com/sore-throat",
+  // },
+  //   {
+  //   name: "Impetigo",
+  //   qr: "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://example.com/sore-throat",
+  //   description: "Redness, swelling, pain, pus at the bite site.",
+  //   link: "https://example.com/sore-throat",
+  // },
 
-      {
-    name: "Shingles",
-    qr: "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://example.com/sore-throat",
-    description: "Painful rash with burning or tingling sensation, typically on one side of the body.",
-    link: "https://example.com/sore-throat",
-  },
+  //     {
+  //   name: "Shingles",
+  //   qr: "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://example.com/sore-throat",
+  //   description: "Painful rash with burning or tingling sensation, typically on one side of the body.",
+  //   link: "https://example.com/sore-throat",
+  // },
 
-      {
-    name: "Uncomplicated urinary tract infections (women only)",
-    qr: "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://example.com/sore-throat",
-    description: "Burning sensation during urination, frequent urination, pain in the lower abdomen.",
-    link: "https://example.com/sore-throat",
-  },
+  //     {
+  //   name: "Uncomplicated urinary tract infections (women only)",
+  //   qr: "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://example.com/sore-throat",
+  //   description: "Burning sensation during urination, frequent urination, pain in the lower abdomen.",
+  //   link: "https://example.com/sore-throat",
+  // },
 ];
 
 
