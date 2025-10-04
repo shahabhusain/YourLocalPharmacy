@@ -12,7 +12,6 @@ export default function Footer() {
     { day: 'Thursday', hours: '10:00 AM - 5:00 PM', isOpen: true },
     { day: 'Friday', hours: '10:00 AM - 5:00 PM', isOpen: true },
     { day: 'Saturday', hours: '10:00 AM - 5:00 PM', isOpen: true },
-    { day: 'Sunday', hours: 'Closed', isOpen: false }
   ];
 
   const serviceLinks = [
