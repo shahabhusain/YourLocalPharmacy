@@ -37,14 +37,7 @@ const EasilyHandle = () => {
             At Manor Pharmacy, we make your healthcare simpler and stress-free. 
             Whether you need prescription refills, reminders, or expert health advice, 
             we’re here to support you at every step.
-            <div className="flex items-center gap-4 mt-3">
-              <span className="block border-b-2 border-[#80E900] text-black text-[12px] font-bold cursor-pointer">
-                LOGIN
-              </span>
-              <span className="block border-b-2 border-[#80E900] text-black text-[12px] font-bold cursor-pointer">
-                REGISTER
-              </span>
-            </div>
+
           </div>
         </div>
 
@@ -75,7 +68,7 @@ const EasilyHandle = () => {
   <span className="bg-[#80E900] rounded-full py-3 px-6
                    transition-all duration-300 
                    group-hover:scale-105 group-hover:shadow-lg">
-    Booking Appointment
+    Book Appointment
   </span>
   <span className="h-[45px] w-[45px] rotate-[320deg] flex items-center justify-center 
                    bg-[#80E900] rounded-full 

@@ -3,7 +3,7 @@ import logo from "../assets/logo.png";
 import { IoMdArrowForward } from "react-icons/io";
 import { Link, useLocation } from "react-router-dom";
 import { HiMenu, HiX } from "react-icons/hi";
-import { IoChevronDown, IoChevronUp } from "react-icons/io5";
+import { IoChevronDown } from "react-icons/io5";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -34,8 +34,9 @@ const Navbar = () => {
     { pathName: "/prescription", title: "Prescription" },
     { pathName: "/flu-Vaccination-service", title: "Flu Vaccination" },
     { pathName: "/blogs", title: "Blogs" },
-    { pathName: "/https://www.nhs.uk/health-a-to-z", title: "Health AtoZ" },
-    { pathName: "/medicine", title: "Medicine AtoZ" },
+    { pathName: "https://www.nhs.uk/health-a-to-z/", title: "Health AtoZ" },
+    { pathName: "https://www.nhs.uk/medicines/", title: "Medicine AtoZ" },
+     { pathName: "/contact-us", title: "Contact Us" },
   ];
 
   /** ---------------- MOBILE ACCORDION ---------------- */
@@ -46,15 +47,46 @@ const Navbar = () => {
         onClick={() => setMobileNHS(!mobileNHS)}
         className="flex justify-between w-full text-left font-medium py-2"
       >
-        NHS {mobileNHS ? <IoChevronUp /> : <IoChevronDown />}
+        NHS{" "}
+        <IoChevronDown
+          className={`transition-transform duration-300 ${
+            mobileNHS ? "rotate-180" : ""
+          }`}
+        />
       </button>
       {mobileNHS && (
         <ul className="pl-4 space-y-2">
-          <li><Link onClick={() => setMobileOpen(false)} to="/new-medicine-service">New Medicine Service</Link></li>
-          <li><Link onClick={() => setMobileOpen(false)} to="/hypertension-case-finding-service">Hypertension Case Finding</Link></li>
-          <li><a href="https://111.nhs.uk/emergency-prescription">Emergency Supply</a></li>
-          <li><Link onClick={() => setMobileOpen(false)} to="/nhs-contraception-service">NHS Contraception</Link></li>
-          <li><Link onClick={() => setMobileOpen(false)} to="/pharmacy-first">Pharmacy First</Link></li>
+          <li>
+            <Link onClick={() => setMobileOpen(false)} to="/new-medicine-service">
+              New Medicine Service
+            </Link>
+          </li>
+          <li>
+            <Link
+              onClick={() => setMobileOpen(false)}
+              to="/hypertension-case-finding-service"
+            >
+              Hypertension Case Finding
+            </Link>
+          </li>
+          <li>
+            <a target="_blank" href="https://111.nhs.uk/emergency-prescription">
+              Emergency Supply
+            </a>
+          </li>
+          <li>
+            <Link
+              onClick={() => setMobileOpen(false)}
+              to="/nhs-contraception-service"
+            >
+              NHS Contraception
+            </Link>
+          </li>
+          <li>
+            <Link onClick={() => setMobileOpen(false)} to="/pharmacy-first">
+              Pharmacy First
+            </Link>
+          </li>
         </ul>
       )}
 
@@ -63,23 +95,28 @@ const Navbar = () => {
         onClick={() => setMobilePrivate(!mobilePrivate)}
         className="flex justify-between w-full text-left font-medium py-2"
       >
-        Private {mobilePrivate ? <IoChevronUp /> : <IoChevronDown />}
+        Private{" "}
+        <IoChevronDown
+          className={`transition-transform duration-300 ${
+            mobilePrivate ? "rotate-180" : ""
+          }`}
+        />
       </button>
       {mobilePrivate && (
         <ul className="pl-4 space-y-2">
-          <li><Link onClick={() => setMobileOpen(false)} to="/travel-clinic">Travel Clinic</Link></li>
-          <li><Link onClick={() => setMobileOpen(false)} to="/hajj-umrah-vaccination">Hajj & Umrah Vaccination</Link></li>
-          <li><Link onClick={() => setMobileOpen(false)} to="/non-travel-vaccination">Non Travel Vaccination</Link></li>
-          <li><Link onClick={() => setMobileOpen(false)} to="/blood-test">Blood Testing</Link></li>
-          <li><Link onClick={() => setMobileOpen(false)} to="/bcg-scar-checks">BCG Scar Checks</Link></li>
-          <li><Link onClick={() => setMobileOpen(false)} to="/ear-wax-removal-microsuction">Ear Wax Removal</Link></li>
-          <li><Link onClick={() => setMobileOpen(false)} to="/cryotherapy">Cryotherapy</Link></li>
-          <li><Link onClick={() => setMobileOpen(false)} to="/vitamin-b12">Vitamin B12</Link></li>
-          <li><Link onClick={() => setMobileOpen(false)} to="/weight-management">Weight Management</Link></li>
-          <li><Link onClick={() => setMobileOpen(false)} to="/uti-treatment">UTI Treatment</Link></li>
-          <li><Link onClick={() => setMobileOpen(false)} to="/independent-prescriber">Independent Prescriber</Link></li>
-          <li><Link onClick={() => setMobileOpen(false)} to="/ear-piercing">Ear Piercing</Link></li>
-          <li><Link onClick={() => setMobileOpen(false)} to="/altitude-sickness-treatment">Altitude Sickness</Link></li>
+          <li><Link to="/travel-clinic">Travel Clinic</Link></li>
+          <li><Link to="/hajj-umrah-vaccination">Hajj & Umrah Vaccination</Link></li>
+          <li><Link to="/non-travel-vaccination">Non Travel Vaccination</Link></li>
+          <li><Link to="/blood-test">Blood Testing</Link></li>
+          <li><Link to="/bcg-scar-checks">BCG Scar Checks</Link></li>
+          <li><Link to="/ear-wax-removal-microsuction">Ear Wax Removal</Link></li>
+          <li><Link to="/cryotherapy">Cryotherapy</Link></li>
+          <li><Link to="/vitamin-b12">Vitamin B12</Link></li>
+          <li><Link to="/weight-management">Weight Management</Link></li>
+          <li><Link to="/uti-treatment">UTI Treatment</Link></li>
+          <li><Link to="/independent-prescriber">Independent Prescriber</Link></li>
+          <li><Link to="/ear-piercing">Ear Piercing</Link></li>
+          <li><Link to="/altitude-sickness-treatment">Altitude Sickness</Link></li>
         </ul>
       )}
     </div>
@@ -98,10 +135,12 @@ const Navbar = () => {
     >
       <span
         className={`cursor-pointer text-[14px] font-semibold ${
-          location.pathname === "/services" ? "border-b-2 border-[#80E900] pb-1" : ""
+          location.pathname === "/services"
+            ? "border-b-2 border-[#80E900] pb-1"
+            : ""
         }`}
       >
-          <Link to="/services">Services</Link>
+        <Link to="/services">Services</Link>
       </span>
 
       {/* main dropdown */}
@@ -114,7 +153,12 @@ const Navbar = () => {
             className="relative"
           >
             <button className="flex justify-between w-full px-3 py-2 hover:bg-gray-100 font-medium">
-              NHS <IoChevronDown />
+              NHS{" "}
+              <IoChevronDown
+                className={`transition-transform duration-300 ${
+                  nhsOpen ? "rotate-270" : ""
+                }`}
+              />
             </button>
             {nhsOpen && (
               <ul className="absolute left-full top-0 w-56 flex flex-col gap-y-3 bg-white rounded-md shadow-lg p-2">
@@ -122,7 +166,7 @@ const Navbar = () => {
                 <li><Link to="/hypertension-case-finding-service">Hypertension Case Finding</Link></li>
                 <li><a href="https://111.nhs.uk/emergency-prescription">Emergency Supply</a></li>
                 <li><Link to="/nhs-contraception-service">NHS Contraception</Link></li>
-                {/* <li><Link to="/pharmacy-first">Pharmacy First</Link></li> */}
+                   <li><Link to="/pharmacy-first">Pharmacy First</Link></li>
               </ul>
             )}
           </div>
@@ -134,7 +178,12 @@ const Navbar = () => {
             className="relative"
           >
             <button className="flex justify-between w-full px-3 py-2 hover:bg-gray-100 font-medium">
-              Private <IoChevronDown />
+              Private{" "}
+              <IoChevronDown
+                className={`transition-transform duration-300 ${
+                  privateOpen ? "rotate-270" : ""
+                }`}
+              />
             </button>
             {privateOpen && (
               <ul className="absolute left-full top-0 w-64 flex flex-col gap-y-3 bg-white rounded-md shadow-lg p-2">
@@ -161,7 +210,11 @@ const Navbar = () => {
 
   /** ---------------- NAV LIST ---------------- */
   const NavList = (isMobile = false) => (
-    <ul className={`${isMobile ? "flex flex-col gap-4" : "flex flex-row items-center gap-6"}`}>
+    <ul
+      className={`${
+        isMobile ? "flex flex-col gap-4" : "flex flex-row items-center gap-6"
+      }`}
+    >
       {NavLinks.map((item, i) =>
         item.title === "Services" ? (
           <li key={i}>
@@ -171,7 +224,12 @@ const Navbar = () => {
                   onClick={() => setMobileServices(!mobileServices)}
                   className="flex justify-between w-full text-left font-semibold"
                 >
-                  Services {mobileServices ? <IoChevronUp /> : <IoChevronDown />}
+                  Services{" "}
+                  <IoChevronDown
+                    className={`transition-transform duration-300 ${
+                      mobileServices ? "rotate-270" : ""
+                    }`}
+                  />
                 </button>
                 {mobileServices && <MobileServicesMenu />}
               </>
@@ -200,8 +258,10 @@ const Navbar = () => {
 
   return (
     <div
-      className={`flex items-center bg-white z-[1000] py-3 px-5 text-black justify-between transition-all duration-300 ${
-        scrolled ? "w-full sticky top-0" : "w-[90%] sticky top-6 rounded-full mx-auto mt-6"
+      className={`flex items-center shadow bg-white z-[1000] py-3 px-5 text-black justify-between transition-all duration-300 ${
+        scrolled
+          ? "w-full sticky top-0"
+          : "w-[90%] sticky top-6 rounded-full mx-auto mt-6"
       }`}
     >
       <Link to="/">
@@ -211,12 +271,9 @@ const Navbar = () => {
       {/* Desktop */}
       <div className="hidden md:flex items-center gap-6">
         {NavList()}
-        <Link
-          to="/appointment"
-          className="flex items-center text-white group"
-        >
+        <Link to="/appointment" className="flex items-center text-white group">
           <span className="bg-[#80E900] rounded-full py-3 px-6 transition-all duration-300 group-hover:scale-105 group-hover:shadow-lg">
-            Booking Appointment
+            Book Appointment
           </span>
           <span className="h-[45px] w-[45px] rotate-[320deg] flex items-center justify-center bg-[#80E900] rounded-full transition-transform duration-300 group-hover:translate-x-1 group-hover:rotate-[360deg]">
             <IoMdArrowForward size={20} />
@@ -241,7 +298,7 @@ const Navbar = () => {
             onClick={() => setMobileOpen(false)}
             className="mt-6 block text-center text-white bg-[#80E900] rounded-full py-3 px-6"
           >
-            Booking Appointment
+            Book Appointment
           </Link>
         </div>
       )}

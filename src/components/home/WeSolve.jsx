@@ -1,12 +1,4 @@
 import React, { useState } from 'react'
-import icon1 from '../../assets/icon1.png'
-import icon2 from '../../assets/icon2.png'
-import icon3 from '../../assets/icon3.png'
-import icon4 from '../../assets/icon4.png'
-import icon5 from '../../assets/icon5.png'
-import icon6 from '../../assets/icon6.png'
-import icon7 from '../../assets/icon7.png'
-import icon8 from '../../assets/icon8.png'
 import { IoMdArrowForward } from 'react-icons/io'
 import { Link } from 'react-router-dom'
 import { FaWeight, FaPlane, FaPrescriptionBottleAlt, FaSyringe, FaDeaf } from "react-icons/fa";
@@ -108,7 +100,7 @@ const data = [
                 {/* Smooth button fade/slide */}
        
 
-                     <Link to={item.path} className={` flex transform transition-all duration-300 ease-in-out  ${hoveredIndex === index ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12 pointer-events-none'}  text-[#fff] items-center `}> <span className='bg-[#80E900] rounded-full py-3 px-6 '>Booking Appointment</span> <span className='h-[45px] w-[45px] rotate-320 flex items-center justify-center bg-[#80E900] rounded-full'><IoMdArrowForward size={20} /></span></Link>
+                     <Link to={item.path} className={` flex transform transition-all duration-300 ease-in-out  ${hoveredIndex === index ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12 pointer-events-none'}  text-[#fff] items-center `}> <span className='bg-[#80E900] rounded-full py-3 px-6 '>View Detail</span> <span className='h-[45px] w-[45px] rotate-320 flex items-center justify-center bg-[#80E900] rounded-full'><IoMdArrowForward size={20} /></span></Link>
               </div>
             ))}
           </div>

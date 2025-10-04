@@ -29,6 +29,7 @@ import UTITreatment from '../pages/PrivatePages/UTITreatment'
 import IndependentPrescriber from '../pages/PrivatePages/IndependentPrescriber'
 import EarPiercing from '../pages/PrivatePages/EarPiercing'
 import AltitudeSicknessTreatment from '../pages/PrivatePages/AltitudeSicknessTreatment'
+import ContactUs from '../pages/ContactUs'
 
 export const router = createBrowserRouter(
     createRoutesFromElements(
@@ -42,6 +43,7 @@ export const router = createBrowserRouter(
              <Route path='/flu-Vaccination-service'  element={<FluVaccination />}/>
               <Route path='/health'  element={<HealthAtoZ />}/>
                <Route path='/medicine'  element={<MedicineAtoZ />}/>
+                <Route path='/contact-us'  element={<ContactUs />}/>
                  <Route path='/appointment'  element={<Appointment />}/>
                   <Route path='/new-medicine'  element={<NewMedicone />}/>
 

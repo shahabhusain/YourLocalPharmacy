@@ -65,7 +65,7 @@ export default function WeAreOffering() {
   <span className="bg-[#80E900] rounded-full py-3 px-6
                    transition-all duration-300 
                    group-hover:scale-105 group-hover:shadow-lg">
-    Booking Appointment
+    Book Appointment
   </span>
   <span className="h-[45px] w-[45px] rotate-[320deg] flex items-center justify-center 
                    bg-[#80E900] rounded-full 

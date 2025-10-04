@@ -6,12 +6,12 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const workingHours = [
-    { day: 'Monday', hours: '10:00 AM - 5:30 PM', isOpen: true },
-    { day: 'Tuesday', hours: '10:00 AM - 5:30 PM', isOpen: true },
-    { day: 'Wednesday', hours: '10:00 AM - 7:00 PM', isOpen: true },
-    { day: 'Thursday', hours: '10:00 AM - 5:30 PM', isOpen: true },
-    { day: 'Friday', hours: '10:00 AM - 5:30 PM', isOpen: true },
-    { day: 'Saturday', hours: '10:00 AM - 2:00 PM', isOpen: true },
+    { day: 'Monday', hours: '10:00 AM - 5:00 PM', isOpen: true },
+    { day: 'Tuesday', hours: '10:00 AM - 5:00 PM', isOpen: true },
+    { day: 'Wednesday', hours: '10:00 AM - 5:00 PM', isOpen: true },
+    { day: 'Thursday', hours: '10:00 AM - 5:00 PM', isOpen: true },
+    { day: 'Friday', hours: '10:00 AM - 5:00 PM', isOpen: true },
+    { day: 'Saturday', hours: '10:00 AM - 5:00 PM', isOpen: true },
     { day: 'Sunday', hours: 'Closed', isOpen: false }
   ];
 
@@ -53,10 +53,10 @@ export default function Footer() {
       path:"/blogs"
     },
      {title:"Health A to Z",
-      path:"/https://www.nhs.uk/health-a-to-z"
+      path:"https://www.nhs.uk/health-a-to-z"
     },
      {title:"Medicine A to Z",
-      path:"/https://www.nhs.uk/medicines"
+      path:"https://www.nhs.uk/medicines"
     },
   ];
 
@@ -160,7 +160,7 @@ export default function Footer() {
           <span className="bg-[#80E900] rounded-full py-3 px-6
                            transition-all duration-300 
                            group-hover:scale-105 group-hover:shadow-lg">
-            Booking Appointment
+            Book Appointment
           </span>
           <span className="h-[45px] w-[45px] rotate-[320deg] flex items-center justify-center 
                            bg-[#80E900] rounded-full 

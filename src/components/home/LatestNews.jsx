@@ -1,57 +1,29 @@
-import React, { useRef, useState } from 'react';
-import { IoMdArrowForward } from "react-icons/io";
+import React, { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
+import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
+import { collection, getDocs } from 'firebase/firestore';
+import { db } from '../../firbase';
+import { Link } from 'react-router-dom';
 
 export default function LatestNews() {
-  const swiperRef = useRef(null);
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [totalPages, setTotalPages] = useState(0);
+  const [blogs, setBlogs] = useState([]);
 
-const articles = [
-  {
-    id: 1,
-    img: "https://images.pexels.com/photos/6823565/pexels-photo-6823565.jpeg?auto=compress&cs=tinysrgb&w=800",
-    date: "Sep 28, 2025",
-    text: "Flu Vaccination Season is Here – Protect yourself and your loved ones with our quick and convenient flu jabs available at Manor Pharmacy.",
-  },
-  {
-    id: 2,
-    img: "https://images.pexels.com/photos/3985170/pexels-photo-3985170.jpeg?auto=compress&cs=tinysrgb&w=800",
-    date: "Sep 18, 2025",
-    text: "Travel Clinic Now Open – Get essential travel vaccinations and health advice before your next trip abroad.",
-  },
-  {
-    id: 3,
-    img: "https://images.pexels.com/photos/3683081/pexels-photo-3683081.jpeg?auto=compress&cs=tinysrgb&w=800",
-    date: "Aug 30, 2025",
-    text: "New Vitamin B12 Injection Service – Boost your energy levels and overall wellness with our pharmacist-led B12 clinic.",
-  },
-  {
-    id: 4,
-    img: "https://images.pexels.com/photos/3952235/pexels-photo-3952235.jpeg?auto=compress&cs=tinysrgb&w=800",
-    date: "Aug 15, 2025",
-    text: "Blood Testing Made Simple – Fast, reliable, and affordable blood tests now available at our pharmacy for your convenience.",
-  },
-  // {
-  //   id: 5,
-  //   img: "https://cdn.pixabay.com/photo/2016/11/29/09/32/ear-1868618_1280.jpg",
-  //   date: "Jul 25, 2025",
-  //   text: "Ear Wax Removal Service – Safe and effective microsuction ear wax removal available. Clear your ears and improve your hearing today.",
-  // },
-  {
-    id: 6,
-    img: "https://images.pexels.com/photos/6231534/pexels-photo-6231534.jpeg?auto=compress&cs=tinysrgb&w=800",
-    date: "Jul 10, 2025",
-    text: "Pharmacy First – Access trusted advice and treatment for common conditions directly from your local pharmacist without the wait.",
-  },
-];
-
-
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      const querySnapshot = await getDocs(collection(db, "Blogs"));
+      const blogList = querySnapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data()
+      }));
+      setBlogs(blogList);
+    };
+    fetchBlogs();
+  }, []);
 
   return (
-    <div className="w-full bg-[#F8F8F8] py-32">
+    <div className="w-full bg-[#F8F8F8] pb-32">
       <div className="w-[90%] mx-auto">
         {/* Header */}
         <div className="mb-16 text-left">
@@ -63,64 +35,87 @@ const articles = [
           </h2>
         </div>
 
-        {/* Swiper */}
+        {/* Swiper with custom pagination */}
         <Swiper
           slidesPerView={1}
           spaceBetween={30}
-          onSwiper={(swiper) => {
-            swiperRef.current = swiper;
-            setTotalPages(swiper.snapGrid.length);
+          pagination={{
+            clickable: true,
+            renderBullet: function (index, className) {
+              return `<span class="${className} custom-bullet"></span>`;
+            },
           }}
-          onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
           breakpoints={{
             640: { slidesPerView: 2 },
             1024: { slidesPerView: 3 },
           }}
           modules={[Pagination]}
-          className="mySwiper pb-12"
+          className="latest-news-swiper"
         >
-          {articles.map((item) => (
+          {blogs.map((item) => (
             <SwiperSlide key={item.id}>
               <div className="bg-white rounded-3xl shadow hover:shadow-lg transition overflow-hidden flex flex-col">
                 <img
-                  src={item.img}
+                  src={item.image}
                   alt="Pharmacy News"
                   className="h-48 w-full object-cover"
                 />
                 <div className="p-6 flex flex-col gap-y-2 flex-1">
                   <p className="text-gray-700 text-sm">{item.date}</p>
                   <p className="mt-3 text-gray-900 leading-relaxed flex-1">
-                    {item.text}
+                    {item.description.slice(0, 80)}...
                   </p>
-                  <button className="mt-4 flex text-[#fff] items-center">
+                  <Link to="/blogs" className="mt-4 flex text-[#fff] items-center">
                     <span className="bg-[#80E900] rounded-full py-3 px-6">
                       Read more
                     </span>
-                    <span className="h-[45px] w-[45px] rotate-320 flex items-center justify-center bg-[#80E900] rounded-full ml-2">
-                      <IoMdArrowForward size={20} />
-                    </span>
-                  </button>
+                  </Link>
                 </div>
               </div>
             </SwiperSlide>
           ))}
         </Swiper>
-
-        {/* Manual bullets */}
-        <div className="mt-8 flex justify-start gap-3">
-          {Array.from({ length: totalPages }).map((_, idx) => (
-            <button
-              key={idx}
-              onClick={() => swiperRef.current?.slideTo(idx)}
-              className={`h-3 rounded-full transition-all duration-300 ${
-                activeIndex === idx
-                  ? 'w-28 bg-lime-500'
-                  : 'w-3 bg-gray-400/50'
-              }`}
-            />
-          ))}
-        </div>
       </div>
+
+      {/* Custom CSS for exact bullet points like image */}
+      <style jsx global>{`
+        .latest-news-swiper {
+          padding-bottom: 4rem !important;
+        }
+        
+        .latest-news-swiper .swiper-pagination {
+          position: relative;
+          bottom: 0;
+          margin-top: 2rem;
+          text-align: left;
+          display: flex;
+          align-items: center;
+          gap: 8px;
+        }
+        
+        .latest-news-swiper .custom-bullet {
+          width: 12px;
+          height: 12px;
+          background: #D1D5DB;
+          border-radius: 50%;
+          opacity: 0.5;
+          transition: all 0.3s ease;
+          cursor: pointer;
+          display: inline-block;
+        }
+        
+        .latest-news-swiper .custom-bullet.swiper-pagination-bullet-active {
+          width: 40px;
+          height: 12px;
+          background: #80E900;
+          opacity: 1;
+          border-radius: 6px;
+        }
+        
+        .latest-news-swiper .custom-bullet:hover {
+          opacity: 0.8;
+        }
+      `}</style>
     </div>
   );
 }

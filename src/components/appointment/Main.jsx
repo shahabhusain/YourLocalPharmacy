@@ -18,7 +18,7 @@ const Main = () => {
   ];
 
   return (
-    <div className="md:mt-[102px] mt-[130px] mb-[100px] w-[90%] mx-auto flex flex-col md:flex-row justify-between">
+    <div className="md:mt-[402px] mt-[330px] mb-[100px] w-[90%] mx-auto flex flex-col md:flex-row justify-between">
       {/* Sidebar Steps */}
       <div className="bg-[#f8f8f8] p-6 rounded-md md:w-[30%] md:flex hidden flex-col gap-y-5">
         {data.map((item, index) => {
